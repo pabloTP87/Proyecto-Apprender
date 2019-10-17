@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">Apprender</string>
+    <string name="logotipo">logotipo de la aplicación</string>
+
+    <!-- Strings para pantalla Walkthrough-->
+
+    <string name="description1">
+        A continuación, te brindaremos
+        las instrucciones y la forma de
+        utilizar con la aplicación.
+    </string>
+    <string name="description2">
+        Tendrás instrucciones de audio y
+        reconocimiento de voz para interactuar
+        con la aplicación.
+    </string>
+    <string name="description3">
+        Iras avanzando por el contenido,
+        desarrollando el aprendizaje a tu
+        propio ritmo.
+    </string>
+
+    <!-- Strings para pantalla de inicio de registro-->
+    <string name="registryDescription">A continuación, desarrollaras tu
+        primera actividad.
+
+        Ingresaras algunos datos por
+        medio de las herramientas que te
+        entregaremos a modo que te
+        familiarices con la aplicación.
+    </string>
+
+    <string name="registryTittle">Comencemos</string>
+
+    <string name="text_btn_start">Iniciar</string>
+    <string name="guardar">Guardar</string>
+    <string name="volver">Volver</string>
+    <string name="btn_login_registrar">Iniciar registro</string>
+    <string name="btn_login_ingresar">Ingresar</string>
+    <string name="btn_registry_comenzar">Comenzar</string>
+    <string name="label_login_input">Rut o DNI</string>
+
+    <!-- Strings para fragments de registro de usuario-->
+    <string name="question1">¿Cuál es tu primer nombre?</string>
+    <string name="question2">¿Cuál es tu Apellido?</string>
+    <string name="question3">¿Cuantos años tienes?</string>
+    <string name="question4">¿Cuál es tu Rut?</string>
+    <string name="question5">¿Cuál es tu sexo?</string>
+    <string name="verificar">Verificar</string>
+    <string name="continuar">Continuar</string>
+    <string name="hombre">Hombre</string>
+    <string name="mujer">Mujer</string>
+    <string name="otro">Otro</string>
+    <string name="datos">Tus datos</string>
+    <string name="felicitaciones">Felicitaciones</string>
+    <string name="iniciar">Iniciar</string>
+
+    <string name="confirm_message"> has terminado tu registro</string>
+    <string name="txt_hint">hola</string>
+
+    <!--Content Description-->
+    <string name="ic_check_registry">Check_img</string>
+    <string name="chapter_img">Fondos para capitulos</string>
+    <string name="play_image">Play image</string>
+
+    <!--Titles navigation bottom-->
+    <string name="capitulos">Capitulos</string>
+    <string name="perfil">Perfil</string>
+    <string name="ayuda">Ayuda</string>
+
+    <!--Titles activity-->
+    <string name="capitulo_1">Capitulo 1</string>
+    <string name="capitulo_2">Capitulo 2</string>
+    <string name="encuesta">Encuesta de satisfacción</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

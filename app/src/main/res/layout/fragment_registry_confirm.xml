@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        android:id="@+id/confirmFragment"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragments.RegistryAgeFragment">
+
+    <Button
+            android:id="@+id/btnAudioConfirm"
+            android:layout_width="46dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="112dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_circle_line"
+            android:drawableEnd="@drawable/ic_volume_up_black"
+            android:paddingEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:id="@+id/tusDatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/datos"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAudioConfirm" />
+
+    <TextView
+            android:id="@+id/txtFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tusDatos" />
+
+    <TextView
+            android:id="@+id/txtAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFullName" />
+
+    <TextView
+            android:id="@+id/txtRut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAge" />
+
+    <TextView
+            android:id="@+id/txtGenero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="19dp"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtRut" />
+
+    <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="132dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginBottom="116dp"
+            android:background="@drawable/btn_short_border_shape"
+            android:text="@string/volver"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtGenero"
+            app:layout_constraintVertical_bias="0.934" />
+
+    <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="132dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginBottom="116dp"
+            android:background="@drawable/btn_short_shape"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:text="@string/guardar"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtGenero"
+            app:layout_constraintVertical_bias="0.934" />
+
+</android.support.constraint.ConstraintLayout>
