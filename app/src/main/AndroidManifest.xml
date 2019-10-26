@@ -12,11 +12,17 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
+                android:name=".view.LeccionVocalesThreeActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.LeccionVocalesTwoActivity"
+                android:theme="@style/LessonTheme" />
+        <activity
                 android:name=".view.LeccionVocalesOneActivity"
-                android:theme="@style/LessonTheme"></activity>
+                android:theme="@style/LessonTheme" />
         <activity
                 android:name=".view.ChapterOneActivity"
-                android:label="@string/capitulo_1"></activity>
+                android:label="@string/capitulo_1" />
         <activity
                 android:name=".view.RegistryActivity"
                 android:theme="@style/LessonTheme" />

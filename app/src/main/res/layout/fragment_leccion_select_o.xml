@@ -10,23 +10,24 @@
             android:id="@+id/btnQst3"
             android:layout_width="46dp"
             android:layout_height="47dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="48dp"
             android:background="@drawable/btn_circle_line"
             android:drawableEnd="@drawable/ic_volume_up_black"
             android:paddingEnd="5dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-            android:id="@+id/imageView3"
+    <TextView
+            android:id="@+id/vocal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
-            android:src="@drawable/ic_primary_a"
+            android:layout_marginTop="32dp"
+            android:text="@string/o"
+            android:textSize="80sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnQst3" />
 
@@ -34,40 +35,37 @@
             android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="72dp"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3">
+            app:layout_constraintTop_toBottomOf="@+id/vocal">
 
         <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/radio_button_selector"
-                android:button="@drawable/ic_rb_a" />
+                android:background="@drawable/radio_button_round_selector"
+                android:button="@drawable/ic_rb_arbol" />
 
         <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/i"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/radio_button_selector"
-                android:button="@drawable/ic_rb_a" />
+                android:background="@drawable/radio_button_round_selector"
+                android:button="@drawable/ic_rb_ojo" />
 
         <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/o"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="@drawable/radio_button_selector"
-                android:button="@drawable/ic_rb_a" />
+                android:background="@drawable/radio_button_round_selector"
+                android:button="@drawable/ic_rb_estrella" />
 
-        <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:background="@drawable/radio_button_selector"
-                android:button="@drawable/ic_rb_a" />
     </RadioGroup>
 
     <Button
@@ -81,7 +79,9 @@
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+            app:layout_constraintVertical_bias="0.653" />
 
 </android.support.constraint.ConstraintLayout>

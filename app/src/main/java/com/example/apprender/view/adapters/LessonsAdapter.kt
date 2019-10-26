@@ -11,9 +11,9 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.apprender.R
 import com.example.apprender.view.LeccionVocalesOneActivity
-import com.example.apprender.view.StartActivity
+import com.example.apprender.view.LeccionVocalesThreeActivity
+import com.example.apprender.view.LeccionVocalesTwoActivity
 import com.example.apprender.view.supportClasses.ItemsLessonsList
-import kotlinx.android.synthetic.main.lessons_list.view.*
 
 class LessonsAdapter (private val context: Context, private val lessonsList: ArrayList<ItemsLessonsList>) : RecyclerView.Adapter<LessonsAdapter.viewHolder>() {
 
@@ -48,6 +48,12 @@ class LessonsAdapter (private val context: Context, private val lessonsList: Arr
             }
 
             1 ->{
+                holder.lessonCard.setOnClickListener {
+
+                    val intent = Intent(context, LeccionVocalesTwoActivity::class.java)
+                    context.startActivity(intent)
+                }
+
                 holder.audioButton.setOnClickListener {
                     val toast = Toast.makeText(context,"audio lección 2",Toast.LENGTH_SHORT)
                     toast.show()
@@ -55,6 +61,12 @@ class LessonsAdapter (private val context: Context, private val lessonsList: Arr
             }
 
             2 ->{
+                holder.lessonCard.setOnClickListener {
+
+                    val intent = Intent(context, LeccionVocalesThreeActivity::class.java)
+                    context.startActivity(intent)
+                }
+
                 holder.audioButton.setOnClickListener {
                     val toast = Toast.makeText(context,"audio lección 3",Toast.LENGTH_SHORT)
                     toast.show()

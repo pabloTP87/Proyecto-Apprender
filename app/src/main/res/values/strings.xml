@@ -3,7 +3,6 @@
     <string name="logotipo">logotipo de la aplicación</string>
 
     <!-- Strings para pantalla Walkthrough-->
-
     <string name="description1">
         A continuación, te brindaremos
         las instrucciones y la forma de
@@ -21,7 +20,8 @@
     </string>
 
     <!-- Strings para pantalla de inicio de registro-->
-    <string name="registryDescription">A continuación, desarrollaras tu
+    <string name="registryDescription">
+        A continuación, desarrollaras tu
         primera actividad.
 
         Ingresaras algunos datos por
@@ -41,7 +41,7 @@
     <string name="label_login_input">Rut o DNI</string>
 
     <!-- Strings para fragments de registro de usuario-->
-    <string name="question1">¿Cuál es tu primer nombre?</string>
+    <string name="question1">¿Cuál es tu nombre?</string>
     <string name="question2">¿Cuál es tu Apellido?</string>
     <string name="question3">¿Cuantos años tienes?</string>
     <string name="question4">¿Cuál es tu Rut?</string>
@@ -72,6 +72,13 @@
     <string name="capitulo_1">Capitulo 1</string>
     <string name="capitulo_2">Capitulo 2</string>
     <string name="encuesta">Encuesta de satisfacción</string>
+
+    <!--Vocales-->
+    <string name="a">a</string>
+    <string name="e">e</string>
+    <string name="i">i</string>
+    <string name="o">o</string>
+    <string name="u">u</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
