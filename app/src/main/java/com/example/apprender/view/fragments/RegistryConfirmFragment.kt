@@ -12,8 +12,6 @@ import android.widget.Button
 import android.widget.TextView
 import com.example.apprender.R
 import com.example.apprender.view.MainActivity
-import kotlinx.android.synthetic.main.fragment_registry_confirm.*
-import kotlinx.android.synthetic.main.fragment_registry_confirm.view.*
 import kotlinx.android.synthetic.main.registry_confirm_dialog.view.*
 
 class RegistryConfirmFragment : Fragment() {
@@ -35,20 +33,18 @@ class RegistryConfirmFragment : Fragment() {
         val nombre = arguments?.getString("nombre")
         val apepat = arguments?.getString("apepat")
 
-        val name = "Nombre: $nombre $apepat"
+        val name = "$nombre $apepat"
         nameUser.text = name
 
         val edad = arguments?.getInt("edad")
-        val edadString = "Edad: ${edad.toString()}"
+        val edadString = edad.toString()
         edadUser.text = edadString
 
         val rut = arguments?.getString("rut")
-        val rutString = "Rut: $rut"
-        rutUser.text = rutString
+        rutUser.text = rut
 
         val genero = arguments?.getString("genero")
-        val generoString = "Genero: $genero"
-        sexo.text = generoString
+        sexo.text = genero
 
 
         btnAudioConfirm.setOnClickListener {

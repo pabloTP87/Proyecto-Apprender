@@ -12,9 +12,9 @@ import android.widget.Button
 import android.widget.RadioButton
 
 import com.example.apprender.R
-import kotlinx.android.synthetic.main.fragment_registry_sex.*
+import kotlinx.android.synthetic.main.fragment_registry_gender.*
 
-class RegistrySexFragment : Fragment() {
+class RegistryGenderFragment : Fragment() {
 
     private var iGenderSend: IGenderSend? = null
 
@@ -22,7 +22,7 @@ class RegistrySexFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_registry_sex, container, false)
+        val view = inflater.inflate(R.layout.fragment_registry_gender, container, false)
 
         val btnCheck = view.findViewById<Button>(R.id.btnCheckSex)
         val btnAudioQst5 = view.findViewById<Button>(R.id.btnQst5)

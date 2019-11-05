@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/registryNameFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        tools:context=".view.fragments.LecturaPalabrasOneFragment">
+
+    <Button
+            android:id="@+id/btn_audio_lect_palabra_one"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/btn_circle_line"
+            android:layout_width="46dp"
+            android:layout_height="47dp"
+            android:drawableEnd="@drawable/ic_volume_up_black"
+            android:paddingEnd="5dp" />
+
+    <TextView
+            android:id="@+id/palabra_id"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="@string/meta"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <EditText
+            android:id="@+id/txt_lect_pal_one"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/input_shape_stroke"
+            android:layout_width="286dp"
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10" />
+
+    <Button
+            android:id="@+id/btn_mic_lect_pal_one"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_circle"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:drawableEnd="@drawable/ic_mic_white"
+            android:padding="11dp"
+            android:layout_margin="20dp"/>
+
+    <TextView
+            android:id="@+id/validation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:textColor="@color/colorAccent"
+            android:layout_margin="20dp"/>
+
+    <Button
+            android:id="@+id/btnVerificar"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/grey_unchecked"
+            android:text="@string/verificar"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content" />
+</LinearLayout>

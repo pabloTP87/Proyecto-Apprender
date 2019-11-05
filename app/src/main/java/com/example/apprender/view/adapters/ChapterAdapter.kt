@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.apprender.R
 import com.example.apprender.view.ChapterOneActivity
+import com.example.apprender.view.ChapterTwoActivity
 import com.example.apprender.view.StartActivity
 import com.example.apprender.view.supportClasses.ItemsChapterCard
 
@@ -38,6 +40,16 @@ class ChapterAdapter(val context: Context, val chapterDataList: ArrayList<ItemsC
                 0 -> {
                     val intent = Intent(context,ChapterOneActivity::class.java)
                     context.startActivity(intent)
+                }
+
+                1 -> {
+                    val intent = Intent(context,ChapterTwoActivity::class.java)
+                    context.startActivity(intent)
+                }
+
+                2 -> {
+                    val toast = Toast.makeText(context,"Encuesta de satisfacción",Toast.LENGTH_SHORT)
+                    toast.show()
                 }
             }
         }

@@ -15,7 +15,7 @@ import com.example.apprender.view.fragments.*
 
 class RegistryActivity : AppCompatActivity(), RegistryNameFragment.IdatosUsuario,
     RegistryLastNameFragment.ILastNameSend, RegistryAgeFragment.IAgeSend,
-    RegistryDniFragment.IRutSend, RegistrySexFragment.IGenderSend {
+    RegistryDniFragment.IRutSend, RegistryGenderFragment.IGenderSend {
 
     val manager = supportFragmentManager
     val bundle = Bundle(10)
@@ -31,7 +31,7 @@ class RegistryActivity : AppCompatActivity(), RegistryNameFragment.IdatosUsuario
 
     override fun rutUsuario(rut: String) {
 
-        val fragment = RegistrySexFragment()
+        val fragment = RegistryGenderFragment()
         bundle.putString("rut",rut)
         fragment.arguments = bundle
 

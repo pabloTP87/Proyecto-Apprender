@@ -27,7 +27,7 @@ class RegistryAgeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_registry_age, container, false)
 
         val txtAge = view.findViewById<EditText>(R.id.txtAge)
-        val btnMic = view.findViewById<FloatingActionButton>(R.id.btnMicAge)
+        val btnMic = view.findViewById<Button>(R.id.btnMicAge)
         val btnCheck = view.findViewById<Button>(R.id.btnCheckAge)
 
         val recognition = Recognition(this.context)

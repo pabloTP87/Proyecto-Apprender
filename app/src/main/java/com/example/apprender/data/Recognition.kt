@@ -8,16 +8,16 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import android.support.design.widget.FloatingActionButton
-import android.support.design.widget.TextInputEditText
-import android.view.MotionEvent
-import android.view.View
+import android.support.v4.content.ContextCompat
+import android.widget.Button
 import android.widget.EditText
+import com.example.apprender.R
 import java.util.*
 
 class Recognition (val context: Context?){
 
     @SuppressLint("ClickableViewAccessibility")
-    fun startSpeechToText(btnMic : FloatingActionButton, editText: EditText){
+    fun startSpeechToText(btnMic : Button, editText: EditText){
 
         val speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context)
         val speechRecognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
@@ -67,7 +67,16 @@ class Recognition (val context: Context?){
             }
         })
 
-        btnMic.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
+        btnMic.setOnClickListener {
+
+            if (btnMic.isPressed){
+                btnMic.backgroundTintList = ContextCompat.getColorStateList(context!!,R.color.btn_red_selector_pressed)
+                speechRecognizer.startListening(speechRecognizerIntent)
+                editText.setText("")
+            }
+        }
+
+        /*btnMic.setOnTouchListener(View.OnTouchListener { view, motionEvent ->
             when(motionEvent.action){
                 MotionEvent.ACTION_UP ->{
                     speechRecognizer.stopListening()
@@ -80,6 +89,6 @@ class Recognition (val context: Context?){
                 }
             }
             false
-        })
+        })*/
     }
 }

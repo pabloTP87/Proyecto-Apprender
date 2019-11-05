@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        tools:context=".view.fragments.RegistryGenderFragment">
+
+    <Button
+            android:id="@+id/btnQst5"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_width="46dp"
+            android:layout_height="47dp"
+            android:background="@drawable/btn_circle_line"
+            android:drawableEnd="@drawable/ic_volume_up_black"
+            android:paddingEnd="5dp" />
+
+    <TextView
+            android:id="@+id/question5"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="@string/question5"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             />
+
+    <RadioGroup
+            android:id="@+id/sexGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+
+        <RadioButton
+                android:id="@+id/rbHombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_gender_selector"
+                android:button="@drawable/ic_rb_hombre_card" />
+
+        <RadioButton
+                android:id="@+id/rbMujer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_gender_selector"
+                android:button="@drawable/ic_rb_mujer_card" />
+
+        <RadioButton
+                android:id="@+id/rbOtro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_button_gender_selector"
+                android:button="@drawable/ic_rb_otro_card" />
+    </RadioGroup>
+
+    <Button
+            android:id="@+id/btnCheckSex"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/grey_unchecked"
+            android:text="@string/verificar"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+</LinearLayout>

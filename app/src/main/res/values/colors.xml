@@ -8,4 +8,5 @@
     <color name="textColor">#5A6063</color>
     <color name="green_checked">#5BB546</color>
     <color name="grey_unchecked">#B1B1B1</color>
+    <color name="red_mic_pressed">#D13333</color>
 </resources>

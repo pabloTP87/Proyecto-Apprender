@@ -11,9 +11,31 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".view.EncuestaActivity"/>
+        <activity
+                android:name=".view.IntroEncuestaActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.LeccionLecturaTwoActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.LeccionLecturaOneActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.LeccionSilabasTwoActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.LeccionSilabasOneActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.ChapterThreeActivity"
+                android:theme="@style/LessonTheme"/>
+        <activity
+                android:name=".view.ChapterTwoActivity"
+                android:label="@string/capitulo_2" />
         <activity
                 android:name=".view.LeccionVocalesThreeActivity"
-                android:theme="@style/LessonTheme"/>
+                android:theme="@style/LessonTheme" />
         <activity
                 android:name=".view.LeccionVocalesTwoActivity"
                 android:theme="@style/LessonTheme" />

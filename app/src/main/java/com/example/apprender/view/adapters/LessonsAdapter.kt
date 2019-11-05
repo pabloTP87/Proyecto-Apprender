@@ -1,6 +1,5 @@
 package com.example.apprender.view.adapters
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.CardView
@@ -10,9 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.apprender.R
-import com.example.apprender.view.LeccionVocalesOneActivity
-import com.example.apprender.view.LeccionVocalesThreeActivity
-import com.example.apprender.view.LeccionVocalesTwoActivity
+import com.example.apprender.view.*
 import com.example.apprender.view.supportClasses.ItemsLessonsList
 
 class LessonsAdapter (private val context: Context, private val lessonsList: ArrayList<ItemsLessonsList>) : RecyclerView.Adapter<LessonsAdapter.viewHolder>() {
@@ -37,42 +34,88 @@ class LessonsAdapter (private val context: Context, private val lessonsList: Arr
             0 -> {
                 holder.lessonCard.setOnClickListener {
 
-                    val intent = Intent(context,LeccionVocalesOneActivity::class.java)
-                    context.startActivity(intent)
+                    if (context is ChapterOneActivity){
+                        val intent = Intent(context,LeccionVocalesOneActivity::class.java)
+                        context.startActivity(intent)
+                    }else{
+                        val intent = Intent(context,LeccionSilabasOneActivity::class.java)
+                        context.startActivity(intent)
+                    }
                 }
 
                 holder.audioButton.setOnClickListener {
-                    val toast = Toast.makeText(context,"audio lección 1",Toast.LENGTH_SHORT)
-                    toast.show()
+
+                    if (context is ChapterOneActivity){
+                        val toast = Toast.makeText(context,"audio lección vocales 1",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }else{
+                        val toast = Toast.makeText(context,"audio lección sílabas 1",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
                 }
             }
 
             1 ->{
                 holder.lessonCard.setOnClickListener {
 
-                    val intent = Intent(context, LeccionVocalesTwoActivity::class.java)
-                    context.startActivity(intent)
+                    if (context is ChapterOneActivity){
+                        val intent = Intent(context, LeccionVocalesTwoActivity::class.java)
+                        context.startActivity(intent)
+                    }else{
+                        val intent = Intent(context,LeccionSilabasTwoActivity::class.java)
+                        context.startActivity(intent)
+                    }
                 }
 
                 holder.audioButton.setOnClickListener {
-                    val toast = Toast.makeText(context,"audio lección 2",Toast.LENGTH_SHORT)
-                    toast.show()
+
+                    if (context is ChapterOneActivity){
+                        val toast = Toast.makeText(context,"audio lección vocales 2",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }else{
+                        val toast = Toast.makeText(context,"audio lección sílabas 2",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
+
                 }
             }
 
             2 ->{
                 holder.lessonCard.setOnClickListener {
 
-                    val intent = Intent(context, LeccionVocalesThreeActivity::class.java)
-                    context.startActivity(intent)
+                    if (context is ChapterOneActivity){
+                        val intent = Intent(context, LeccionVocalesThreeActivity::class.java)
+                        context.startActivity(intent)
+                    }else{
+                        val toast = Toast.makeText(context,"capitulo dos",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
                 }
 
                 holder.audioButton.setOnClickListener {
-                    val toast = Toast.makeText(context,"audio lección 3",Toast.LENGTH_SHORT)
-                    toast.show()
+
+                    if (context is ChapterOneActivity){
+                        val toast = Toast.makeText(context,"audio lección vocales 3",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }else{
+                        val toast = Toast.makeText(context,"audio lección sílabas 3",Toast.LENGTH_SHORT)
+                        toast.show()
+                    }
                 }
             }
 
+            3 -> {
+
+                holder.lessonCard.setOnClickListener {
+                    val toast = Toast.makeText(context,"capitulo dos",Toast.LENGTH_SHORT)
+                    toast.show()
+                }
+
+                holder.audioButton.setOnClickListener {
+                    val toast = Toast.makeText(context,"audio lección sílabas 4",Toast.LENGTH_SHORT)
+                    toast.show()
+                }
+            }
         }
     }
 

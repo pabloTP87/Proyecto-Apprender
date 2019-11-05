@@ -25,7 +25,7 @@ class RegistryDniFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_registry_dni, container, false)
 
         val txtDni = view.findViewById<EditText>(R.id.txtRut)
-        val btnMic = view.findViewById<FloatingActionButton>(R.id.btnMicDni)
+        val btnMic = view.findViewById<Button>(R.id.btnMicDni)
         val btnCheck = view.findViewById<Button>(R.id.btnCheckRut)
 
         val recognition = Recognition(this.context)

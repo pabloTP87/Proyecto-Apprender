@@ -26,7 +26,7 @@ class RegistryLastNameFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_registry_last_name, container, false)
 
         val txtLastName = view.findViewById<EditText>(R.id.txtLastName)
-        val btnMic = view.findViewById<FloatingActionButton>(R.id.btnMicLastName)
+        val btnMic = view.findViewById<Button>(R.id.btnMicLastName)
         val btnCheck = view.findViewById<Button>(R.id.btnCheckLastName)
 
         val recognition = Recognition(this.context)

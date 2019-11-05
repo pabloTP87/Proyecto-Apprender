@@ -25,10 +25,10 @@ class RegistryNameFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_registry_name, container, false)
 
         // Instanciar elementos de UI
-        val btnMic = view.findViewById<FloatingActionButton>(R.id.btnMicRegistry)
+        val btnMic = view.findViewById<Button>(R.id.btnMicRegistry)
         val btnCheck = view.findViewById<Button>(R.id.btnVerificar)
         val txtName = view.findViewById<EditText>(R.id.txtQst1)
-        val valName = view.findViewById<TextView>(R.id.nameValidation)
+        val valName = view.findViewById<TextView>(R.id.validation)
         val btnAudioQst1 = view.findViewById<Button>(R.id.btnQst1)
         val audioQst1 = MediaPlayer.create(this.context,R.raw.pregunta_1)
 

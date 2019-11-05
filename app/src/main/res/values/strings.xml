@@ -54,9 +54,12 @@
     <string name="datos">Tus datos</string>
     <string name="felicitaciones">Felicitaciones</string>
     <string name="iniciar">Iniciar</string>
+    <string name="nombre">Nombre:</string>
+    <string name="edad">Edad:</string>
+    <string name="rut">Rut:</string>
+    <string name="Genero">Genero:</string>
 
     <string name="confirm_message"> has terminado tu registro</string>
-    <string name="txt_hint">hola</string>
 
     <!--Content Description-->
     <string name="ic_check_registry">Check_img</string>
@@ -79,6 +82,21 @@
     <string name="i">i</string>
     <string name="o">o</string>
     <string name="u">u</string>
+
+    <!--Sílabas-->
+    <string name="silabas_1">ta  -  te  -  ti  -  to  -  tu</string>
+    <string name="silabas_2">ma - me - mi - mo - mu</string>
+    <string name="silabas_3">da  -  de  -  di  -  do  -  du</string>
+
+    <!-- Palabras para lectura -->
+    <string name="meta">meta</string>
+    <string name="dado">dado</string>
+    <string name="tomate">tomate</string>
+
+    <!-- Oraciones para lectura -->
+    <string name="oracion_1">tito me ama</string>
+    <string name="oracion_2">mi tía ama a mi tío</string>
+    <string name="oracion_3">mi tía me da mote</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
