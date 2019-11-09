@@ -3,8 +3,7 @@ package com.example.apprender.view
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.apprender.R
-import com.example.apprender.view.fragments.LeccionCompleteUFragment
-import com.example.apprender.view.fragments.LeccionImgAFragment
+import com.example.apprender.view.fragments.LeccionCompleteOneFragment
 
 class LeccionVocalesThreeActivity : AppCompatActivity() {
 
@@ -20,7 +19,7 @@ class LeccionVocalesThreeActivity : AppCompatActivity() {
     private fun createFragment(){
 
         val transaction = manager.beginTransaction()
-        val fragment = LeccionCompleteUFragment()
+        val fragment = LeccionCompleteOneFragment()
         transaction.replace(R.id.leccion_vcls_three_container,fragment)
         transaction.commit()
     }

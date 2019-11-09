@@ -5,10 +5,10 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.fragments.LeccionSelectAFragment">
+        tools:context=".view.fragments.LeccionCompleteTwoFragment">
 
     <Button
-            android:id="@+id/btnQst3"
+            android:id="@+id/btn_audio_complete_two"
             android:layout_width="46dp"
             android:layout_height="47dp"
             android:layout_marginTop="48dp"
@@ -28,13 +28,13 @@
             app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnQst3">
+            app:layout_constraintTop_toBottomOf="@+id/btn_audio_complete_two">
 
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/uva"/>
+                android:src="@drawable/pala"/>
     </android.support.v7.widget.CardView>
 
     <LinearLayout
@@ -46,6 +46,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:src="@drawable/ic_rb_p"/>
 
         <EditText
                 android:id="@+id/in_vocal_1"
@@ -63,11 +69,13 @@
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:background="@drawable/input_text_selector"/>
+
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:src="@drawable/ic_rb_v"/>
+                android:src="@drawable/ic_rb_l"/>
+
         <EditText
                 android:id="@+id/in_vocal_2"
                 android:layout_width="wrap_content"
@@ -87,7 +95,7 @@
     </LinearLayout>
 
     <RadioGroup
-            android:id="@+id/rg_u_vocals"
+            android:id="@+id/rg_vocals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -140,20 +148,20 @@
     </RadioGroup>
 
     <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:id="@+id/btnVerificar"
+            android:layout_width="286dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
             android:layout_marginBottom="44dp"
-            android:background="@drawable/btn_short_border_shape"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/grey_unchecked"
             android:text="@string/verificar"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_u_vocals"
+            app:layout_constraintTop_toBottomOf="@+id/rg_vocals"
             app:layout_constraintVertical_bias="0.906" />
 
 </android.support.constraint.ConstraintLayout>

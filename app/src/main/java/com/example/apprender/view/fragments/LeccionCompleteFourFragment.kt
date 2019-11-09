@@ -10,21 +10,19 @@ import android.widget.EditText
 import android.widget.RadioGroup
 
 import com.example.apprender.R
-import kotlinx.android.synthetic.main.fragment_leccion_complete_u.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class LeccionCompleteUFragment : Fragment() {
+class LeccionCompleteFourFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_leccion_complete_one, container, false)
 
-        val view = inflater.inflate(R.layout.fragment_leccion_complete_u, container, false)
-
-        val rg = view.findViewById<RadioGroup>(R.id.rg_u_vocals)
+        val rg = view.findViewById<RadioGroup>(R.id.rg_vocals)
         val inputU = view.findViewById<EditText>(R.id.in_vocal_1)
         val inputA = view.findViewById<EditText>(R.id.in_vocal_2)
 
@@ -94,9 +92,6 @@ class LeccionCompleteUFragment : Fragment() {
 
             }
         }
-
-
-
         // Inflate the layout for this fragment
         return view
     }
