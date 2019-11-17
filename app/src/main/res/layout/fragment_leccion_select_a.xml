@@ -4,7 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.fragments.LeccionSelectAFragment">
+        tools:context=".view.fragments.LeccionSelectAFragment"
+        android:id="@+id/leccion_a_layout">
 
     <Button
             android:id="@+id/btn_audio_slct_a"
@@ -78,6 +79,7 @@
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
+            android:enabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

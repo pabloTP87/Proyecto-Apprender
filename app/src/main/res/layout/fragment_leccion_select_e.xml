@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+        android:id="@+id/leccion_e_layout"
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -43,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@+id/vocal">
 
         <RadioButton
-                android:id="@+id/a"
+                android:id="@+id/escoba"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -51,7 +53,7 @@
                 android:button="@drawable/ic_rb_escoba" />
 
         <RadioButton
-                android:id="@+id/i"
+                android:id="@+id/olla"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -59,7 +61,7 @@
                 android:button="@drawable/ic_rb_olla" />
 
         <RadioButton
-                android:id="@+id/o"
+                android:id="@+id/uña"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -78,6 +80,7 @@
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"
+            android:enabled="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

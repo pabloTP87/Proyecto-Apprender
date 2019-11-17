@@ -98,6 +98,24 @@
     <string name="oracion_2">mi tía ama a mi tío</string>
     <string name="oracion_3">mi tía me da mote</string>
 
+    <!-- Strings para Fragment de confirmación de lecciones -->
+    <string name="leccion_datos">Datos de la lección</string>
+    <string name="puntaje">Puntaje</string>
+    <string name="Tiempo">Tiempo</string>
+    <string name="correctas">Correctas</string>
+    <string name="incorrectas">Incorrectas</string>
+    <string name="timer">00:00</string>
+
+    <!-- Strings para Dialog confirm de las lecciones -->
+    <string name="fin_leccion">Fin de la lección</string>
+    <string name="confirm_desc">Continua aprendiendo</string>
+
+    <!-- Strings para Dialog close de las lecciones -->
+    <string name="perder_avance">Perderás tu avance</string>
+    <string name="cerrar_leccion">¿deseas cerrar la lección?</string>
+    <string name="si_dialog">Si</string>
+    <string name="no_dialog">No</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
