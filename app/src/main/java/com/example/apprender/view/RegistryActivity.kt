@@ -1,23 +1,27 @@
 package com.example.apprender.view
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.provider.Settings
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
+import android.view.LayoutInflater
+import android.widget.ImageButton
+import android.widget.TextView
 import android.widget.Toast
 import com.example.apprender.R
 import com.example.apprender.view.fragments.*
+import kotlinx.android.synthetic.main.leccion_close_dialog.view.*
 
-class RegistryActivity : AppCompatActivity(), RegistryNameFragment.IdatosUsuario,
-    RegistryLastNameFragment.ILastNameSend, RegistryAgeFragment.IAgeSend,
-    RegistryDniFragment.IRutSend, RegistryGenderFragment.IGenderSend {
+class RegistryActivity : AppCompatActivity(), IDatosUsuario {
 
-    val manager = supportFragmentManager
+    private val manager = supportFragmentManager
     val bundle = Bundle(10)
 
     override fun generoUsuario(genero: String) {
@@ -29,10 +33,11 @@ class RegistryActivity : AppCompatActivity(), RegistryNameFragment.IdatosUsuario
         createFragment(fragment)
     }
 
-    override fun rutUsuario(rut: String) {
+    override fun rutUsuario(rut: String, dv: String) {
 
         val fragment = RegistryGenderFragment()
-        bundle.putString("rut",rut)
+        bundle.putString("rut", rut)
+        bundle.putString("dv", dv)
         fragment.arguments = bundle
 
         createFragment(fragment)
@@ -68,8 +73,15 @@ class RegistryActivity : AppCompatActivity(), RegistryNameFragment.IdatosUsuario
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registry)
 
+        val backButton = findViewById<ImageButton>(R.id.btn_close_registry)
+
         createRegistryFragment()
         checkPermision()
+
+        backButton.setOnClickListener {
+
+            showCloseDialog()
+        }
     }
 
     private fun createRegistryFragment(){
@@ -97,6 +109,30 @@ class RegistryActivity : AppCompatActivity(), RegistryNameFragment.IdatosUsuario
                 finish()
                 Toast.makeText(this,"permiso de microfono aceptado",Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        //super.onBackPressed()
+
+        showCloseDialog()
+    }
+
+    private fun showCloseDialog() {
+        val confirmDialog = LayoutInflater.from(this).inflate(R.layout.registry_close_dialog,null)
+        val builder = AlertDialog.Builder(this).setView(confirmDialog)
+
+        val alertDialog = builder.show()
+
+        alertDialog.setCanceledOnTouchOutside(false)
+
+        confirmDialog.btn_si.setOnClickListener {
+            alertDialog.dismiss()
+            this.finish()
+        }
+
+        confirmDialog.btn_no.setOnClickListener {
+            alertDialog.dismiss()
         }
     }
 

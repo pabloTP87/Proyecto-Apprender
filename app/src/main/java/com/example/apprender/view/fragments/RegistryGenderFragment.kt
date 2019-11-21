@@ -1,22 +1,23 @@
 package com.example.apprender.view.fragments
 
-
-import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioButton
+import android.widget.RadioGroup
 
 import com.example.apprender.R
+import com.example.apprender.view.IDatosUsuario
 import kotlinx.android.synthetic.main.fragment_registry_gender.*
 
 class RegistryGenderFragment : Fragment() {
 
-    private var iGenderSend: IGenderSend? = null
+    private lateinit var idatosUsuario : IDatosUsuario
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,36 +27,49 @@ class RegistryGenderFragment : Fragment() {
 
         val btnCheck = view.findViewById<Button>(R.id.btnCheckSex)
         val btnAudioQst5 = view.findViewById<Button>(R.id.btnQst5)
+        val genderGroup = view.findViewById<RadioGroup>(R.id.gender_group)
         val audioQst5 = MediaPlayer.create(this.context,R.raw.pregunta_5)
-
-        val rbHombre = view.findViewById<RadioButton>(R.id.rbHombre)
-        val rbMujer = view.findViewById<RadioButton>(R.id.rbMujer)
-        val rbOtro = view.findViewById<RadioButton>(R.id.rbOtro)
 
         btnAudioQst5.setOnClickListener {
             audioQst5.seekTo(0)
             audioQst5.start()
         }
 
+        genderGroup.setOnCheckedChangeListener { group, checkedId ->
 
+            when (checkedId){
+                R.id.rbHombre -> {
+                    btnCheck.isEnabled = true
+                    btnCheck.backgroundTintList = ContextCompat.getColorStateList(this@RegistryGenderFragment.context!!,R.color.btn_green_selector_unpressed)
+                }
+                R.id.rbMujer -> {
+                    btnCheck.isEnabled = true
+                    btnCheck.backgroundTintList = ContextCompat.getColorStateList(this@RegistryGenderFragment.context!!,R.color.btn_green_selector_unpressed)
+                }
+                R.id.rbOtro -> {
+                    btnCheck.isEnabled = true
+                    btnCheck.backgroundTintList = ContextCompat.getColorStateList(this@RegistryGenderFragment.context!!,R.color.btn_green_selector_unpressed)
+                }
+            }
+        }
 
         btnCheck.setOnClickListener {
 
             val gender: String
 
-            when (sexGroup.checkedRadioButtonId){
+            when (gender_group.checkedRadioButtonId){
 
                 R.id.rbHombre -> {
                     gender = "hombre"
-                    iGenderSend?.generoUsuario(gender)
+                    idatosUsuario.generoUsuario(gender)
                 }
                 R.id.rbMujer -> {
                     gender = "Mujer"
-                    iGenderSend?.generoUsuario(gender)
+                    idatosUsuario.generoUsuario(gender)
                 }
                 R.id.rbOtro -> {
                     gender = "otro"
-                    iGenderSend?.generoUsuario(gender)
+                    idatosUsuario.generoUsuario(gender)
                 }
             }
         }
@@ -64,13 +78,8 @@ class RegistryGenderFragment : Fragment() {
         return view
     }
 
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-
-        iGenderSend = activity as IGenderSend
-    }
-
-    interface IGenderSend{
-        fun generoUsuario(genero: String)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        idatosUsuario = activity as IDatosUsuario
     }
 }

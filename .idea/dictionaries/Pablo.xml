@@ -3,11 +3,13 @@
     <words>
       <w>acciones</w>
       <w>aceptado</w>
+      <w>aceptar</w>
       <w>acierto</w>
       <w>aciertos</w>
       <w>actividad</w>
       <w>agregamos</w>
       <w>agregar</w>
+      <w>algoritmo</w>
       <w>algunos</w>
       <w>animación</w>
       <w>apaterno</w>
@@ -29,15 +31,20 @@
       <w>boton</w>
       <w>brindaremos</w>
       <w>cada</w>
+      <w>cadena</w>
+      <w>calculamos</w>
       <w>cambia</w>
       <w>cantidad</w>
       <w>capitulo</w>
       <w>capitulos</w>
+      <w>caracter</w>
       <w>cerrar</w>
       <w>clase</w>
       <w>colores</w>
       <w>comencemos</w>
       <w>comenzar</w>
+      <w>completa</w>
+      <w>completo</w>
       <w>configurar</w>
       <w>confirmación</w>
       <w>contenido</w>
@@ -48,29 +55,42 @@
       <w>correctas</w>
       <w>correcto</w>
       <w>correspondientes</w>
+      <w>corresponiente</w>
       <w>creacion</w>
       <w>creamos</w>
       <w>crear</w>
+      <w>cuando</w>
       <w>cuantos</w>
       <w>cuál</w>
+      <w>cúando</w>
+      <w>dato</w>
       <w>datos</w>
+      <w>debe</w>
       <w>defecto</w>
       <w>dejamos</w>
       <w>dentro</w>
       <w>desarrollando</w>
       <w>desarrollaras</w>
+      <w>desde</w>
       <w>deseas</w>
       <w>desplazar</w>
+      <w>devolvemos</w>
       <w>devuelve</w>
+      <w>digito</w>
       <w>dinámica</w>
+      <w>donde</w>
+      <w>dígito</w>
+      <w>dígitos</w>
       <w>edad</w>
       <w>elementos</w>
       <w>encuesta</w>
       <w>entregaremos</w>
+      <w>equivalente</w>
       <w>estadistica</w>
       <w>estado</w>
       <w>este</w>
       <w>evento</w>
+      <w>expresión</w>
       <w>familiarices</w>
       <w>fecha</w>
       <w>felicitaciones</w>
@@ -79,18 +99,24 @@
       <w>forma</w>
       <w>función</w>
       <w>genero</w>
+      <w>guarda</w>
+      <w>guardamos</w>
       <w>guardar</w>
+      <w>guion</w>
+      <w>guión</w>
       <w>habilitamos</w>
       <w>hacia</w>
       <w>herramientas</w>
       <w>icono</w>
       <w>idatos</w>
+      <w>igual</w>
       <w>ilast</w>
       <w>imágenes</w>
       <w>incorrecta</w>
       <w>incorrectas</w>
       <w>incorrecto</w>
       <w>inflando</w>
+      <w>ingresado</w>
       <w>ingresar</w>
       <w>ingresaras</w>
       <w>iniciar</w>
@@ -99,25 +125,37 @@
       <w>instrucciones</w>
       <w>interactua</w>
       <w>interactuar</w>
+      <w>invalido</w>
       <w>izquierda</w>
+      <w>lastname</w>
       <w>leccion</w>
       <w>lecciones</w>
       <w>lección</w>
       <w>lectura</w>
       <w>lista</w>
       <w>logotipo</w>
+      <w>mantisa</w>
+      <w>mantiza</w>
+      <w>mantíza</w>
+      <w>matchentire</w>
       <w>medio</w>
       <w>microfono</w>
       <w>modo</w>
       <w>mostramos</w>
       <w>mostrar</w>
       <w>mujer</w>
+      <w>multiplica</w>
+      <w>multiplicación</w>
+      <w>multiplicador</w>
+      <w>multiplicamos</w>
       <w>método</w>
       <w>móvil</w>
       <w>navbar</w>
       <w>necesarios</w>
       <w>niveles</w>
       <w>nombre</w>
+      <w>número</w>
+      <w>números</w>
       <w>obtenemos</w>
       <w>oraciones</w>
       <w>otro</w>
@@ -136,15 +174,31 @@
       <w>primera</w>
       <w>propio</w>
       <w>puntaje</w>
+      <w>queda</w>
+      <w>rango</w>
       <w>recibir</w>
       <w>reconocimiento</w>
+      <w>recorremos</w>
       <w>registro</w>
+      <w>remplaza</w>
+      <w>respectivamente</w>
       <w>respuesta</w>
+      <w>restamos</w>
+      <w>restante</w>
+      <w>resultado</w>
+      <w>resultante</w>
+      <w>retorna</w>
+      <w>retornamos</w>
       <w>ritmo</w>
+      <w>sacamos</w>
       <w>satisfacción</w>
+      <w>según</w>
+      <w>separamos</w>
       <w>sexo</w>
+      <w>siempre</w>
       <w>silabas</w>
       <w>snackbar</w>
+      <w>suma</w>
       <w>supera</w>
       <w>sílabas</w>
       <w>tendrás</w>
@@ -155,6 +209,12 @@
       <w>usuario</w>
       <w>usuarios</w>
       <w>utilizar</w>
+      <w>validación</w>
+      <w>validado</w>
+      <w>validadora</w>
+      <w>validamos</w>
+      <w>validar</w>
+      <w>verificador</w>
       <w>verificar</w>
       <w>vocales</w>
       <w>volver</w>

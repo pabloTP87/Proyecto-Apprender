@@ -41,6 +41,7 @@ class RegistryConfirmFragment : Fragment() {
         edadUser.text = edadString
 
         val rut = arguments?.getString("rut")
+        val rutDB = arguments?.getString("dv")
         rutUser.text = rut
 
         val genero = arguments?.getString("genero")

@@ -113,6 +113,7 @@
     <!-- Strings para Dialog close de las lecciones -->
     <string name="perder_avance">Perderás tu avance</string>
     <string name="cerrar_leccion">¿deseas cerrar la lección?</string>
+    <string name="cerrar_registro">¿deseas cerrar el registro?</string>
     <string name="si_dialog">Si</string>
     <string name="no_dialog">No</string>
 
