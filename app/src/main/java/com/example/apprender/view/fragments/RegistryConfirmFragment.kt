@@ -22,9 +22,8 @@ class RegistryConfirmFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_registry_confirm, container, false)
 
-        val btnAudioConfirm = view.findViewById<Button>(R.id.btnAudioConfirm)
-        val audioConfirm = MediaPlayer.create(this.context,R.raw.fin_registro)
-        val btnGuardar = view.findViewById<Button>(R.id.btnGuardar)
+        val btnGuardar = view.findViewById<Button>(R.id.btn_audio_confirm_encuesta)
+
         val nameUser = view.findViewById<TextView>(R.id.txtFullName)
         val edadUser = view.findViewById<TextView>(R.id.txtAge)
         val rutUser = view.findViewById<TextView>(R.id.txtRut)
@@ -47,15 +46,9 @@ class RegistryConfirmFragment : Fragment() {
         val genero = arguments?.getString("genero")
         sexo.text = genero
 
-
-        btnAudioConfirm.setOnClickListener {
-            audioConfirm.seekTo(0)
-            audioConfirm.start()
-        }
-
         btnGuardar.setOnClickListener {
 
-            val confirmDialog = LayoutInflater.from(this.activity).inflate(R.layout.registry_confirm_dialog,null)
+            val confirmDialog = LayoutInflater.from(this.context).inflate(R.layout.registry_confirm_dialog,null)
             val builder = AlertDialog.Builder(this.activity)
                 .setView(confirmDialog)
 

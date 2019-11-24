@@ -30,6 +30,10 @@ class ChapterTwoActivity : AppCompatActivity() {
         mRecyclerView!!.layoutManager = mLayoutManager
         mRecyclerAdapter = LessonsAdapter(this,lessonsList)
         mRecyclerView!!.adapter = mRecyclerAdapter
+
+        // mostramos y habilitamos el boton atrás en el Navbar
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.setDisplayShowHomeEnabled(true)
     }
 
     // Evento que finaliza esta actividad al presionar el boton atrás en el navbar

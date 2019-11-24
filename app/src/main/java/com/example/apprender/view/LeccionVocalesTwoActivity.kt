@@ -8,12 +8,13 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.widget.Chronometer
 import android.widget.ImageButton
-import com.example.apprender.ILeccionVocalesOne
+import com.example.apprender.interfaces.ILeccionVocalesOne
 import com.example.apprender.R
 import com.example.apprender.view.fragments.*
 import kotlinx.android.synthetic.main.leccion_close_dialog.view.*
 
-class LeccionVocalesTwoActivity : AppCompatActivity(), ILeccionVocalesOne , VocalesTwoConfirmFragment.sendTimeChronometer{
+class LeccionVocalesTwoActivity : AppCompatActivity(),
+    ILeccionVocalesOne, VocalesTwoConfirmFragment.sendTimeChronometer{
 
     private lateinit var chronometer: Chronometer
     private var timeStop: Long = 0

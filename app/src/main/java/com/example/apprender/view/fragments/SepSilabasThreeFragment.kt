@@ -1,6 +1,5 @@
 package com.example.apprender.view.fragments
 
-
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
@@ -13,12 +12,15 @@ import android.widget.Button
 import android.widget.EditText
 
 import com.example.apprender.R
-import com.example.apprender.data.Recognition
+import com.example.apprender.interfaces.ILeccionVocalesOne
+import com.example.apprender.logica.Recognition
+import com.example.apprender.logica.Validator
 
-/**
- * A simple [Fragment] subclass.
- */
 class SepSilabasThreeFragment : Fragment() {
+
+    private lateinit var iSilabasThree : ILeccionVocalesOne
+    private var validator: Validator = Validator()
+    private var layout: Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +29,11 @@ class SepSilabasThreeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_sep_silabas_three, container, false)
 
+        layout = R.id.sep_silabas_three_layout
+        val mLayoutInflater = layoutInflater
+
         val btnMic = view.findViewById<Button>(R.id.btn_mic_sil3)
-        val btnVerificar = view.findViewById<Button>(R.id.btnVerificar)
+        val btnCheck = view.findViewById<Button>(R.id.btnVerificar)
         val input = view.findViewById<EditText>(R.id.txt_sil_three)
 
         val recognition = Recognition(this.context)
@@ -43,22 +48,66 @@ class SepSilabasThreeFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                val text = input.text.toString().trim()
+                val text = input.text.toString()
 
                 if (text.isNotEmpty()){
-                    btnVerificar.isEnabled = true
-                    btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@SepSilabasThreeFragment.context!!,R.color.btn_green_selector_unpressed)
+                    btnCheck.isEnabled = true
+                    btnCheck.backgroundTintList = ContextCompat.getColorStateList(this@SepSilabasThreeFragment.context!!,R.color.btn_green_selector_unpressed)
                     btnMic.backgroundTintList = ContextCompat.getColorStateList(this@SepSilabasThreeFragment.context!!,R.color.btn_mic_primary_dark_selector_unpressed)
                 }else{
-                    btnVerificar.isEnabled = false
-                    btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@SepSilabasThreeFragment.context!!,R.color.btn_disable_grey)
+                    btnCheck.isEnabled = false
+                    btnCheck.backgroundTintList = ContextCompat.getColorStateList(this@SepSilabasThreeFragment.context!!,R.color.btn_disable_grey)
                 }
             }
 
         })
 
+        btnCheck.setOnClickListener {
+
+            val silabaThree = input.text.toString()
+
+            if (matchInput(silabaThree)){
+
+                if (silabaThree.equals("da de di do du") || silabaThree.equals("da de di do dú")
+                    || silabaThree.equals("dadedidodú") || silabaThree.equals("dadedidodu")){
+
+                    val puntaje = 5
+                    val acierto = true
+                    iSilabasThree.datosLeccionThree(puntaje, acierto)
+                    validator.showSnackBar(this.context!!,acierto,mLayoutInflater,view,layout)
+
+                } else {
+
+                    val acierto = false
+                    val puntaje = 0
+                    iSilabasThree.datosLeccionThree(puntaje, acierto)
+                    validator.showSnackBar(this.context!!,acierto,mLayoutInflater,view,layout)
+                }
+            }else {
+
+                val acierto = false
+                val puntaje = 0
+                iSilabasThree.datosLeccionThree(puntaje, acierto)
+                validator.showSnackBar(this.context!!,acierto,mLayoutInflater,view,layout)
+            }
+        }
         // Inflate the layout for this fragment
         return view
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        iSilabasThree = activity as ILeccionVocalesOne
+    }
+
+    fun matchInput(input: CharSequence): Boolean{
+        // expresión regular para aceptar solo texto
+        val pat = Regex("[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+")
+        // matchentire valida la cadena de texto completa contra regex
+        val matchPat = pat.matchEntire(input)
+
+        // matchEntire retorna null si no hay match con regex -> la función devuelve siempre una cadena valida
+        return (matchPat != null)
     }
 
 

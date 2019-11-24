@@ -11,16 +11,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import com.example.apprender.R
-import com.example.apprender.data.Recognition
-import com.example.apprender.view.IDatosUsuario
-import com.example.apprender.view.Validator
+import com.example.apprender.logica.Recognition
+import com.example.apprender.interfaces.IDatosUsuario
+import com.example.apprender.logica.Validator
 
 class RegistryLastNameFragment : Fragment() {
 
     private lateinit var idatosUsuario : IDatosUsuario
-    private var validator: Validator = Validator()
+    private var validator: Validator =
+        Validator()
     private var layout: Int = 0
 
     override fun onCreateView(

@@ -14,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-
         val btnAudioLogin = findViewById<Button>(R.id.btnAudioLogin)
 
         val audioLogin = MediaPlayer.create(this,R.raw.audio_login)
@@ -44,9 +43,5 @@ class LoginActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-
     }
-
-
-
 }

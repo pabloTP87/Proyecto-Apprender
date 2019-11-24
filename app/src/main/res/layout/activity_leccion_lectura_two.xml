@@ -9,11 +9,19 @@
         tools:context=".view.LeccionLecturaTwoActivity">
 
     <ImageButton
+            android:id="@+id/back_button"
             android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_close_black_24dp"
             android:backgroundTint="@color/colorWhite"/>
+
+    <Chronometer
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:visibility="visible"/>
 
     <FrameLayout
             android:id="@+id/leccion_lctr_two_container"

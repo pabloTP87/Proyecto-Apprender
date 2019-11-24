@@ -9,10 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioGroup
-import com.example.apprender.ILeccionVocalesOne
+import com.example.apprender.interfaces.ILeccionVocalesOne
 
 import com.example.apprender.R
-import com.example.apprender.view.Validator
+import com.example.apprender.logica.Validator
 
 class LeccionImgUFragment : Fragment() {
 
@@ -21,7 +21,8 @@ class LeccionImgUFragment : Fragment() {
     private lateinit var rgOptions: RadioGroup
 
     var layout: Int = 0
-    private var validator: Validator = Validator()
+    private var validator: Validator =
+        Validator()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

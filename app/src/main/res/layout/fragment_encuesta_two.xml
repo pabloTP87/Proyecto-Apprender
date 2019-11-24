@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/registry_gender_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        tools:context=".view.fragments.EncuestaTwoFragment">
+
+    <Button
+            android:id="@+id/btn_audio_encuesta_two"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_width="46dp"
+            android:layout_height="47dp"
+            android:background="@drawable/btn_circle_line"
+            android:drawableEnd="@drawable/ic_volume_up_black"
+            android:paddingEnd="5dp" />
+
+    <TextView
+            android:id="@+id/pregunta_2"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:text="@string/pregunta_encuesta_2"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+    <RadioGroup
+            android:id="@+id/encuesta_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal">
+
+        <RadioButton
+                android:id="@+id/rb_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_sentiment_dissatisfied"
+                android:button="@null"
+                android:layout_margin="15dp"
+                android:text="@string/insatisfecho"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"/>
+
+        <RadioButton
+                android:id="@+id/rb_sat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_sentiment_neutral"
+                android:button="@null"
+                android:layout_margin="15dp"
+                android:text="@string/satisfecho"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"/>
+
+        <RadioButton
+                android:id="@+id/rb_msat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_sentiment_satisfied"
+                android:button="@null"
+                android:layout_margin="15dp"
+                android:text="@string/muy_satisfecho"
+                android:textColor="@color/textColor"
+                android:textStyle="bold"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle" />
+    </RadioGroup>
+
+    <Button
+            android:id="@+id/btn_guardar_encuesta"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/grey_unchecked"
+            android:text="@string/siguiente"
+            android:textAllCaps="false"
+            android:enabled="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp" />
+
+</LinearLayout>

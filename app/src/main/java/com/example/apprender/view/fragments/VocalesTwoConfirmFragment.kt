@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.example.apprender.LeccionStat
+import com.example.apprender.logica.LeccionStat
 import com.example.apprender.R
 import com.example.apprender.view.ChapterOneActivity
 import kotlinx.android.synthetic.main.leccion_confirm_dialog.view.*
@@ -19,7 +19,8 @@ class VocalesTwoConfirmFragment : Fragment() {
 
     private lateinit var iStopTimer : sendTimeChronometer
 
-    private var estadistica: LeccionStat = LeccionStat()
+    private var estadistica: LeccionStat =
+        LeccionStat()
     private var listaPuntaje: ArrayList<Int> = ArrayList()
     private var listaAciertos: ArrayList<Boolean> = ArrayList()
 

@@ -7,16 +7,16 @@ import android.net.Uri
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.provider.Settings
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.widget.ImageButton
-import android.widget.TextView
 import android.widget.Toast
 import com.example.apprender.R
 import com.example.apprender.view.fragments.*
+import com.example.apprender.interfaces.IDatosUsuario
 import kotlinx.android.synthetic.main.leccion_close_dialog.view.*
 
 class RegistryActivity : AppCompatActivity(), IDatosUsuario {
@@ -76,7 +76,6 @@ class RegistryActivity : AppCompatActivity(), IDatosUsuario {
         val backButton = findViewById<ImageButton>(R.id.btn_close_registry)
 
         createRegistryFragment()
-        checkPermision()
 
         backButton.setOnClickListener {
 
@@ -99,17 +98,6 @@ class RegistryActivity : AppCompatActivity(), IDatosUsuario {
         transaction.replace(R.id.fragmentContainer,fragment)
         transaction.addToBackStack(null)
         transaction.commit()
-    }
-
-    private fun checkPermision(){
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            if(ContextCompat.checkSelfPermission(this,android.Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
-                val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:$packageName"))
-                startActivity(intent)
-                finish()
-                Toast.makeText(this,"permiso de microfono aceptado",Toast.LENGTH_SHORT).show()
-            }
-        }
     }
 
     override fun onBackPressed() {
@@ -135,5 +123,4 @@ class RegistryActivity : AppCompatActivity(), IDatosUsuario {
             alertDialog.dismiss()
         }
     }
-
 }

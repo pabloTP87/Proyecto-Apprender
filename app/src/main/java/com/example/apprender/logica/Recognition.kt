@@ -1,4 +1,4 @@
-package com.example.apprender.data
+package com.example.apprender.logica
 
 import android.annotation.SuppressLint
 import android.content.Context

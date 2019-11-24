@@ -1,4 +1,4 @@
-package com.example.apprender
+package com.example.apprender.logica
 
 class LeccionStat {
 

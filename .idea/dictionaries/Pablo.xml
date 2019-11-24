@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Pablo">
     <words>
+      <w>abrir</w>
       <w>acciones</w>
       <w>aceptado</w>
       <w>aceptar</w>
@@ -12,6 +13,7 @@
       <w>algoritmo</w>
       <w>algunos</w>
       <w>animación</w>
+      <w>anteriormente</w>
       <w>apaterno</w>
       <w>apellido</w>
       <w>apepat</w>
@@ -19,6 +21,7 @@
       <w>apprender</w>
       <w>aprendiendo</w>
       <w>aprendizaje</w>
+      <w>aprendió</w>
       <w>asignamos</w>
       <w>asociación</w>
       <w>atrás</w>
@@ -30,6 +33,7 @@
       <w>bienvenido</w>
       <w>boton</w>
       <w>brindaremos</w>
+      <w>buena</w>
       <w>cada</w>
       <w>cadena</w>
       <w>calculamos</w>
@@ -38,6 +42,7 @@
       <w>capitulo</w>
       <w>capitulos</w>
       <w>caracter</w>
+      <w>caracteres</w>
       <w>cerrar</w>
       <w>clase</w>
       <w>colores</w>
@@ -45,8 +50,10 @@
       <w>comenzar</w>
       <w>completa</w>
       <w>completo</w>
+      <w>comprensión</w>
       <w>configurar</w>
       <w>confirmación</w>
+      <w>considera</w>
       <w>contenido</w>
       <w>contiene</w>
       <w>continuación</w>
@@ -63,6 +70,7 @@
       <w>cuantos</w>
       <w>cuál</w>
       <w>cúando</w>
+      <w>darnos</w>
       <w>dato</w>
       <w>datos</w>
       <w>debe</w>
@@ -71,9 +79,11 @@
       <w>dentro</w>
       <w>desarrollando</w>
       <w>desarrollaras</w>
+      <w>descripcion</w>
       <w>desde</w>
       <w>deseas</w>
       <w>desplazar</w>
+      <w>desplegada</w>
       <w>devolvemos</w>
       <w>devuelve</w>
       <w>digito</w>
@@ -82,35 +92,54 @@
       <w>dígito</w>
       <w>dígitos</w>
       <w>edad</w>
+      <w>edittext</w>
       <w>elementos</w>
       <w>encuesta</w>
+      <w>entre</w>
+      <w>entregar</w>
       <w>entregaremos</w>
+      <w>enviada</w>
+      <w>enviar</w>
       <w>equivalente</w>
+      <w>escucha</w>
+      <w>espacio</w>
+      <w>espacios</w>
       <w>estadistica</w>
       <w>estado</w>
       <w>este</w>
+      <w>esto</w>
+      <w>evaluamos</w>
+      <w>evaluando</w>
       <w>evento</w>
+      <w>experiencia</w>
       <w>expresión</w>
       <w>familiarices</w>
       <w>fecha</w>
       <w>felicitaciones</w>
       <w>finaliza</w>
+      <w>finalizar</w>
+      <w>fluido</w>
       <w>fondos</w>
       <w>forma</w>
       <w>función</w>
+      <w>fácil</w>
       <w>genero</w>
+      <w>gracias</w>
       <w>guarda</w>
+      <w>guardada</w>
       <w>guardamos</w>
       <w>guardar</w>
       <w>guion</w>
       <w>guión</w>
       <w>habilitamos</w>
       <w>hacia</w>
+      <w>herramienta</w>
       <w>herramientas</w>
       <w>icono</w>
       <w>idatos</w>
       <w>igual</w>
       <w>ilast</w>
+      <w>importante</w>
       <w>imágenes</w>
       <w>incorrecta</w>
       <w>incorrectas</w>
@@ -121,12 +150,14 @@
       <w>ingresaras</w>
       <w>iniciar</w>
       <w>inicio</w>
+      <w>insatisfecho</w>
       <w>instanciar</w>
       <w>instrucciones</w>
       <w>interactua</w>
       <w>interactuar</w>
       <w>invalido</w>
       <w>izquierda</w>
+      <w>juego</w>
       <w>lastname</w>
       <w>leccion</w>
       <w>lecciones</w>
@@ -134,15 +165,20 @@
       <w>lectura</w>
       <w>lista</w>
       <w>logotipo</w>
+      <w>mamemimomu</w>
+      <w>mamemimomú</w>
       <w>mantisa</w>
       <w>mantiza</w>
       <w>mantíza</w>
       <w>matchentire</w>
+      <w>mediante</w>
       <w>medio</w>
+      <w>mejor</w>
       <w>microfono</w>
       <w>modo</w>
       <w>mostramos</w>
       <w>mostrar</w>
+      <w>msat</w>
       <w>mujer</w>
       <w>multiplica</w>
       <w>multiplicación</w>
@@ -154,22 +190,31 @@
       <w>necesarios</w>
       <w>niveles</w>
       <w>nombre</w>
+      <w>nosotros</w>
       <w>número</w>
       <w>números</w>
       <w>obtenemos</w>
+      <w>opinión</w>
+      <w>oracion</w>
       <w>oraciones</w>
       <w>otro</w>
       <w>palabra</w>
+      <w>palabras</w>
       <w>pantalla</w>
       <w>parte</w>
+      <w>perder</w>
       <w>perderás</w>
       <w>perfil</w>
+      <w>permision</w>
       <w>permiso</w>
       <w>permite</w>
+      <w>permitirá</w>
       <w>personalizada</w>
       <w>personalizado</w>
       <w>personalizar</w>
       <w>posición</w>
+      <w>pregunta</w>
+      <w>preguntas</w>
       <w>presionar</w>
       <w>primera</w>
       <w>propio</w>
@@ -179,9 +224,11 @@
       <w>recibir</w>
       <w>reconocimiento</w>
       <w>recorremos</w>
+      <w>reemplazar</w>
       <w>registro</w>
       <w>remplaza</w>
       <w>respectivamente</w>
+      <w>responde</w>
       <w>respuesta</w>
       <w>restamos</w>
       <w>restante</w>
@@ -192,23 +239,34 @@
       <w>ritmo</w>
       <w>sacamos</w>
       <w>satisfacción</w>
+      <w>satisfecho</w>
       <w>según</w>
       <w>separamos</w>
       <w>sexo</w>
       <w>siempre</w>
+      <w>siguiente</w>
+      <w>silaba</w>
       <w>silabas</w>
       <w>snackbar</w>
       <w>suma</w>
       <w>supera</w>
       <w>sílabas</w>
+      <w>tatetitotu</w>
+      <w>tatetitotú</w>
       <w>tendrás</w>
       <w>terminado</w>
       <w>texto</w>
       <w>tiempo</w>
+      <w>tiene</w>
       <w>tienes</w>
+      <w>titulo</w>
+      <w>tomate</w>
+      <w>usando</w>
+      <w>usar</w>
       <w>usuario</w>
       <w>usuarios</w>
       <w>utilizar</w>
+      <w>vacío</w>
       <w>validación</w>
       <w>validado</w>
       <w>validadora</w>

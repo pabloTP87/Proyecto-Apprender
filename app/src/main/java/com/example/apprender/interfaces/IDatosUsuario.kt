@@ -1,4 +1,4 @@
-package com.example.apprender.view
+package com.example.apprender.interfaces
 
 interface IDatosUsuario {
     fun nombreUsuario(nombre: String)

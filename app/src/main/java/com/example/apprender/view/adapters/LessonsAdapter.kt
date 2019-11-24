@@ -87,8 +87,8 @@ class LessonsAdapter (private val context: Context, private val lessonsList: Arr
                         val intent = Intent(context, LeccionVocalesThreeActivity::class.java)
                         context.startActivity(intent)
                     }else{
-                        val toast = Toast.makeText(context,"capitulo dos",Toast.LENGTH_SHORT)
-                        toast.show()
+                        val intent = Intent(context, LeccionLecturaOneActivity::class.java)
+                        context.startActivity(intent)
                     }
                 }
 
@@ -107,8 +107,8 @@ class LessonsAdapter (private val context: Context, private val lessonsList: Arr
             3 -> {
 
                 holder.lessonCard.setOnClickListener {
-                    val toast = Toast.makeText(context,"capitulo dos",Toast.LENGTH_SHORT)
-                    toast.show()
+                    val intent = Intent(context, LeccionLecturaTwoActivity::class.java)
+                    context.startActivity(intent)
                 }
 
                 holder.audioButton.setOnClickListener {

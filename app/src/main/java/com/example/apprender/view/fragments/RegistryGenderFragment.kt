@@ -8,11 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.RadioButton
 import android.widget.RadioGroup
 
 import com.example.apprender.R
-import com.example.apprender.view.IDatosUsuario
+import com.example.apprender.interfaces.IDatosUsuario
 import kotlinx.android.synthetic.main.fragment_registry_gender.*
 
 class RegistryGenderFragment : Fragment() {

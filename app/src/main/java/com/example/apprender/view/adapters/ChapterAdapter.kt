@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.example.apprender.R
 import com.example.apprender.view.ChapterOneActivity
 import com.example.apprender.view.ChapterTwoActivity
+import com.example.apprender.view.IntroEncuestaActivity
 import com.example.apprender.view.StartActivity
 import com.example.apprender.view.supportClasses.ItemsChapterCard
 
@@ -48,8 +49,8 @@ class ChapterAdapter(val context: Context, val chapterDataList: ArrayList<ItemsC
                 }
 
                 2 -> {
-                    val toast = Toast.makeText(context,"Encuesta de satisfacción",Toast.LENGTH_SHORT)
-                    toast.show()
+                    val intent = Intent(context,IntroEncuestaActivity::class.java)
+                    context.startActivity(intent)
                 }
             }
         }

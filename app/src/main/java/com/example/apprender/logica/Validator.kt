@@ -1,13 +1,18 @@
-package com.example.apprender.view
+package com.example.apprender.logica
 
+import android.app.Activity
 import android.content.Context
+import android.content.pm.PackageManager
+import android.os.Build
 import android.support.design.widget.Snackbar
+import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.apprender.R
+import com.example.apprender.view.RegistryActivity
 
 class Validator {
 
@@ -142,6 +147,15 @@ class Validator {
         } else {
 
             return dv.toString()
+        }
+    }
+
+    fun checkPermision(context: Context, activity: Activity){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            if(ContextCompat.checkSelfPermission(context,android.Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED){
+                val permission = arrayOf(android.Manifest.permission.RECORD_AUDIO)
+                ActivityCompat.requestPermissions(activity,permission,0)
+            }
         }
     }
 }

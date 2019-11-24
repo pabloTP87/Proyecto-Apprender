@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import com.example.apprender.ILeccionVocalesOne
+import com.example.apprender.interfaces.ILeccionVocalesOne
 import com.example.apprender.R
-import com.example.apprender.view.Validator
+import com.example.apprender.logica.Validator
 
 class LeccionSelectAFragment : Fragment() {
 
@@ -26,11 +26,12 @@ class LeccionSelectAFragment : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_leccion_select_a, container, false)
+
         layout = R.id.leccion_a_layout
         val mLayoutInflater = layoutInflater
+
         btnVerificar = view.findViewById(R.id.btnVerificar)
         rgOptions = view.findViewById(R.id.radioGroup)
-
 
         rgOptions.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId) {

@@ -5,24 +5,22 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.content.ContextCompat
 import android.text.Editable
-import android.text.Layout
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import com.example.apprender.R
-import com.example.apprender.data.Recognition
-import com.example.apprender.view.IDatosUsuario
-import com.example.apprender.view.Validator
+import com.example.apprender.logica.Recognition
+import com.example.apprender.interfaces.IDatosUsuario
+import com.example.apprender.logica.Validator
 
 class RegistryDniFragment : Fragment() {
 
     private lateinit var idatosUsuario : IDatosUsuario
-    private var validator: Validator = Validator()
+    private var validator: Validator =
+        Validator()
     private var layout: Int = 0
 
     override fun onCreateView(
@@ -51,6 +49,13 @@ class RegistryDniFragment : Fragment() {
 
         val textWatcher = object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
+                // Se guarda el resultado de reemplazar un espacio por un caracter vacío
+                val resultado = s.toString().replace(" ", "")
+                // Evaluamos si el editText tiene o forma espacios entre los caracteres
+                if (!s.toString().equals(resultado)) {
+                    txtDni.setText(resultado) // asignamos el texto sin espacios
+                    txtDni.setSelection(resultado.length) // asignamos el rango del string al editText
+                }
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

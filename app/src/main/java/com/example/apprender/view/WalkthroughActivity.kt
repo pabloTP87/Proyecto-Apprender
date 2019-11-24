@@ -1,6 +1,9 @@
+
 package com.example.apprender.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -14,17 +17,33 @@ import kotlinx.android.synthetic.main.activity_walkthrough.*
 
 class WalkthroughActivity : AppCompatActivity() {
 
-    lateinit var screenPager: ViewPager
-    lateinit var introViewPagerAdapter: IntroViewPagerAdapter
-    lateinit var tabIndicator: TabLayout
-    var position: Int = 0
+    private lateinit var screenPager: ViewPager
+    private lateinit var introViewPagerAdapter: IntroViewPagerAdapter
+    private lateinit var tabIndicator: TabLayout
+    private var position: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_walkthrough)
 
-        // Creamos la lista de elementos del ViewPager
+        // Acciones del viewPager e instrucciones de audio
+        val bienvenida1 = MediaPlayer.create(this,R.raw.bienvenida_1)
+        val bienvenida2 = MediaPlayer.create(this,R.raw.bienvenida_2)
+        val bienvenida3 = MediaPlayer.create(this,R.raw.bienvenida_3)
 
+        /* La activity Intro debe verificar antes de abrir si ya fue
+        desplegada anteriormente mediante la variable guardada en SharedPreferences -> True o False
+         */
+        if (verificarIntroCheckData()) {
+
+            val intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+            bienvenida1.pause()
+
+            finish()
+        }
+
+        // Creamos la lista de elementos del ViewPager
         val item1 = IntroScreenItems(
             "Bienvenido",
             getString(R.string.description1),
@@ -49,18 +68,12 @@ class WalkthroughActivity : AppCompatActivity() {
 
         // Configurar ViewPager
         screenPager = intro_view_pager
-        introViewPagerAdapter =
-            IntroViewPagerAdapter(this, listItems)
+        introViewPagerAdapter = IntroViewPagerAdapter(this, listItems)
         screenPager.adapter = introViewPagerAdapter
 
         // Configurar TabLayout
         tabIndicator = indicators_dots
         tabIndicator.setupWithViewPager(screenPager)
-
-        // Acciones del viewPager e instrucciones de audio
-        val bienvenida1 = MediaPlayer.create(this,R.raw.bienvenida_1)
-        val bienvenida2 = MediaPlayer.create(this,R.raw.bienvenida_2)
-        val bienvenida3 = MediaPlayer.create(this,R.raw.bienvenida_3)
 
         if (screenPager.currentItem == 0){
             bienvenida1.start()
@@ -173,7 +186,27 @@ class WalkthroughActivity : AppCompatActivity() {
                 bienvenida2.pause()
                 bienvenida3.pause()
             }
+
             startActivity(intent)
+
+            savePrefIntroData()
+
+            finish()
         }
+    }
+
+    private fun verificarIntroCheckData() : Boolean {
+        val pref = applicationContext.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        val checkIntroOpen = pref.getBoolean("introIsOpen",false)
+
+        return checkIntroOpen
+    }
+
+    private fun savePrefIntroData() {
+
+        val pref = applicationContext.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = pref.edit()
+        editor.putBoolean("introIsOpen", true)
+        editor.apply()
     }
 }

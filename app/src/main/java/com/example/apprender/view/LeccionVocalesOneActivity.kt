@@ -1,7 +1,6 @@
 package com.example.apprender.view
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -9,13 +8,13 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.widget.Chronometer
 import android.widget.ImageButton
-import com.example.apprender.ILeccionVocalesOne
+import com.example.apprender.interfaces.ILeccionVocalesOne
 import com.example.apprender.R
 import com.example.apprender.view.fragments.*
-import kotlinx.android.synthetic.main.fragment_registry_dni.*
 import kotlinx.android.synthetic.main.leccion_close_dialog.view.*
 
-class LeccionVocalesOneActivity : AppCompatActivity() , ILeccionVocalesOne, VocalesOneConfirmFragment.sendTimeChronometer {
+class LeccionVocalesOneActivity : AppCompatActivity() ,
+    ILeccionVocalesOne, VocalesOneConfirmFragment.sendTimeChronometer {
 
     private lateinit var chronometer: Chronometer
     private var timeStop: Long = 0

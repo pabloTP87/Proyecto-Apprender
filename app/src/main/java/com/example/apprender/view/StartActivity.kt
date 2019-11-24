@@ -7,13 +7,18 @@ import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.widget.ImageButton
 import com.example.apprender.R
+import com.example.apprender.logica.Validator
 import kotlinx.android.synthetic.main.activity_start.*
 
 class StartActivity : AppCompatActivity() {
 
+    val validator : Validator = Validator()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
+
+        validator.checkPermision(this , this)
 
         val btnAudioReg = findViewById<FloatingActionButton>(R.id.btnAudioRegister)
         val backLogin = findViewById<ImageButton>(R.id.btnBackLogin)

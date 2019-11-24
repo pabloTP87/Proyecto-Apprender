@@ -2,18 +2,18 @@ package com.example.apprender.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.internal.BottomNavigationItemView
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-import android.view.MenuItem
 import com.example.apprender.R
+import com.example.apprender.logica.Validator
 import com.example.apprender.view.fragments.HelpFragment
 import com.example.apprender.view.fragments.HomeFragment
 import com.example.apprender.view.fragments.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
-    val manager = supportFragmentManager
+    private val manager = supportFragmentManager
+    val validator : Validator = Validator()
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item->
         when(item.itemId){
@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        validator.checkPermision(this , this)
 
         val homeFragment = HomeFragment()
         createFragment(homeFragment)

@@ -109,13 +109,37 @@
     <!-- Strings para Dialog confirm de las lecciones -->
     <string name="fin_leccion">Fin de la lección</string>
     <string name="confirm_desc">Continua aprendiendo</string>
+    <string name="fin_encuesta">Encuesta enviada</string>
 
     <!-- Strings para Dialog close de las lecciones -->
     <string name="perder_avance">Perderás tu avance</string>
     <string name="cerrar_leccion">¿deseas cerrar la lección?</string>
     <string name="cerrar_registro">¿deseas cerrar el registro?</string>
+    <string name="cerrar_encuesta">¿deseas cerrar la encuesta?</string>
     <string name="si_dialog">Si</string>
     <string name="no_dialog">No</string>
+
+    <!-- String para intro encuesta de satisfacción-->
+    <string name="titulo_intro_encuesta">Encuesta de satisfacción</string>
+    <string name="descripcion_intro_encuesta">
+        Tu opinión es importante para nosotros, esto
+        permitirá entregar una mejor herramienta para
+        el aprendizaje de la lectura.
+
+        Escucha las preguntas y responde evaluando de 1 a 3.
+    </string>
+
+    <string name="pregunta_encuesta_1">¿Fue buena la experiencia al usar la aplicación móvil?</string>
+    <string name="pregunta_encuesta_2">¿Fue un juego fluido y de fácil comprensión?</string>
+    <string name="pregunta_encuesta_3">¿Considera que aprendió usando la aplicación?</string>
+
+    <string name="satisfecho">Satisfecho</string>
+    <string name="insatisfecho">Insatisfecho</string>
+    <string name="muy_satisfecho">Muy Satisfecho</string>
+
+    <string name="siguiente">Siguiente</string>
+    <string name="finalizar_encuesta">Finalizar encuesta</string>
+    <string name="titulo_encuesta_confirm">Gracias por darnos tu opinión</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
