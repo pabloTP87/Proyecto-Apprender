@@ -4,15 +4,15 @@ import android.app.Activity
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
-import android.support.design.widget.Snackbar
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.apprender.R
 import com.example.apprender.view.RegistryActivity
+import com.google.android.material.snackbar.Snackbar
 
 class Validator {
 
@@ -24,7 +24,7 @@ class Validator {
         // obtenemos el snackBarLayout que permite personalizar este Item
         val barLayout = bar.view as Snackbar.SnackbarLayout
         // obtenemos el textView por defecto del snackBar y lo dejamos invisible
-        val textBar = barLayout.findViewById<TextView>(android.support.design.R.id.snackbar_text)
+        val textBar = barLayout.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
         textBar.visibility = View.INVISIBLE
         // variable para crear la vista inflando el layout personalizado para el snackBar
         val snackView = inflater.inflate(R.layout.correct_snackbar_layout, null) as View

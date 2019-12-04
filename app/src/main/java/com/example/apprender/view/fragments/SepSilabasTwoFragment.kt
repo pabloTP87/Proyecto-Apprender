@@ -1,9 +1,7 @@
 package com.example.apprender.view.fragments
 
-
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.LayoutInflater
@@ -11,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-
+import androidx.fragment.app.Fragment
 import com.example.apprender.R
 import com.example.apprender.interfaces.ILeccionVocalesOne
 import com.example.apprender.logica.Recognition
@@ -110,6 +108,4 @@ class SepSilabasTwoFragment : Fragment() {
         // matchEntire retorna null si no hay match con regex -> la función devuelve siempre una cadena valida
         return (matchPat != null)
     }
-
-
 }

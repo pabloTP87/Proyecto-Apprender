@@ -2,12 +2,12 @@ package com.example.apprender.view
 
 import android.content.Intent
 import android.media.MediaPlayer
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import com.example.apprender.R
 import com.example.apprender.logica.Validator
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_start.*
 
 class StartActivity : AppCompatActivity() {

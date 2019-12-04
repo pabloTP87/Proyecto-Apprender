@@ -1,9 +1,9 @@
 package com.example.apprender.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import com.example.apprender.R
 
 class ChapterThreeActivity : AppCompatActivity() {

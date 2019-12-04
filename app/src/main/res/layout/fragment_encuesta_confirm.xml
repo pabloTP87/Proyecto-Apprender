@@ -33,22 +33,9 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:src="@drawable/ic_img_send"/>
 
-    <TextView
-            android:id="@+id/respuesta_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    <TextView
-            android:id="@+id/respuesta_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    <TextView
-            android:id="@+id/respuesta_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
     <Button
             android:id="@+id/btn_Finalizar"

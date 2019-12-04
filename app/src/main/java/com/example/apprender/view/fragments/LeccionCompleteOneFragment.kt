@@ -1,10 +1,9 @@
 package com.example.apprender.view.fragments
 
-
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioGroup
+import androidx.fragment.app.Fragment
 import com.example.apprender.interfaces.ILeccionVocalesOne
 import com.example.apprender.R
 import com.example.apprender.logica.Validator
@@ -22,8 +22,7 @@ class LeccionCompleteOneFragment : Fragment() {
     lateinit var btnVerificar : Button
 
     var layout: Int = 0
-    private var validator: Validator =
-        Validator()
+    private var validator: Validator = Validator()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,6 +37,9 @@ class LeccionCompleteOneFragment : Fragment() {
 
         val inputU = view.findViewById<EditText>(R.id.in_vocal_1)
         val inputA = view.findViewById<EditText>(R.id.in_vocal_2)
+
+        inputU.inputType = InputType.TYPE_NULL
+        inputA.inputType = InputType.TYPE_NULL
 
         rg.setOnCheckedChangeListener { group, checkedId ->
 

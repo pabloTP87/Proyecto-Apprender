@@ -11,6 +11,7 @@ tools:context=".view.RegistryActivity">
 <ImageButton
         android:id="@+id/btn_close_registry"
         android:layout_margin="10dp"
+        android:contentDescription="@string/x_close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_close_black_24dp"

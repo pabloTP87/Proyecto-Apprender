@@ -1,18 +1,16 @@
-
 package com.example.apprender.view
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.media.MediaPlayer
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.view.ViewPager
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
 import com.example.apprender.R
+import com.example.apprender.logica.Session
 import com.example.apprender.view.supportClasses.IntroScreenItems
 import com.example.apprender.view.adapters.IntroViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_walkthrough.*
 
 class WalkthroughActivity : AppCompatActivity() {
@@ -21,10 +19,16 @@ class WalkthroughActivity : AppCompatActivity() {
     private lateinit var introViewPagerAdapter: IntroViewPagerAdapter
     private lateinit var tabIndicator: TabLayout
     private var position: Int = 0
+    lateinit var session: Session
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_walkthrough)
+
+        session = Session(this)
+
+        val introViewPager = findViewById<ViewPager>(R.id.intro_view_pager)
+        val indicatorDots = findViewById<TabLayout>(R.id.indicators_dots)
 
         // Acciones del viewPager e instrucciones de audio
         val bienvenida1 = MediaPlayer.create(this,R.raw.bienvenida_1)
@@ -34,7 +38,7 @@ class WalkthroughActivity : AppCompatActivity() {
         /* La activity Intro debe verificar antes de abrir si ya fue
         desplegada anteriormente mediante la variable guardada en SharedPreferences -> True o False
          */
-        if (verificarIntroCheckData()) {
+        if (session.verificarIntroCheckData()) {
 
             val intent = Intent(this,LoginActivity::class.java)
             startActivity(intent)
@@ -67,12 +71,12 @@ class WalkthroughActivity : AppCompatActivity() {
         listItems.add(item3)
 
         // Configurar ViewPager
-        screenPager = intro_view_pager
+        screenPager = introViewPager
         introViewPagerAdapter = IntroViewPagerAdapter(this, listItems)
         screenPager.adapter = introViewPagerAdapter
 
         // Configurar TabLayout
-        tabIndicator = indicators_dots
+        tabIndicator = indicatorDots
         tabIndicator.setupWithViewPager(screenPager)
 
         if (screenPager.currentItem == 0){
@@ -189,24 +193,9 @@ class WalkthroughActivity : AppCompatActivity() {
 
             startActivity(intent)
 
-            savePrefIntroData()
+            session.savePrefIntroData()
 
             finish()
         }
-    }
-
-    private fun verificarIntroCheckData() : Boolean {
-        val pref = applicationContext.getSharedPreferences("myPref", Context.MODE_PRIVATE)
-        val checkIntroOpen = pref.getBoolean("introIsOpen",false)
-
-        return checkIntroOpen
-    }
-
-    private fun savePrefIntroData() {
-
-        val pref = applicationContext.getSharedPreferences("myPref", Context.MODE_PRIVATE)
-        val editor: SharedPreferences.Editor = pref.edit()
-        editor.putBoolean("introIsOpen", true)
-        editor.apply()
     }
 }

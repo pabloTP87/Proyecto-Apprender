@@ -8,6 +8,7 @@
       <w>acierto</w>
       <w>aciertos</w>
       <w>actividad</w>
+      <w>agregado</w>
       <w>agregamos</w>
       <w>agregar</w>
       <w>algoritmo</w>
@@ -50,6 +51,7 @@
       <w>comenzar</w>
       <w>completa</w>
       <w>completo</w>
+      <w>complition</w>
       <w>comprensión</w>
       <w>configurar</w>
       <w>confirmación</w>
@@ -58,6 +60,7 @@
       <w>contiene</w>
       <w>continuación</w>
       <w>continuar</w>
+      <w>contraseña</w>
       <w>correcta</w>
       <w>correctas</w>
       <w>correcto</w>
@@ -80,6 +83,7 @@
       <w>desarrollando</w>
       <w>desarrollaras</w>
       <w>descripcion</w>
+      <w>descripción</w>
       <w>desde</w>
       <w>deseas</w>
       <w>desplazar</w>
@@ -88,6 +92,7 @@
       <w>devuelve</w>
       <w>digito</w>
       <w>dinámica</w>
+      <w>documento</w>
       <w>donde</w>
       <w>dígito</w>
       <w>dígitos</w>
@@ -101,6 +106,7 @@
       <w>enviada</w>
       <w>enviar</w>
       <w>equivalente</w>
+      <w>escoba</w>
       <w>escucha</w>
       <w>espacio</w>
       <w>espacios</w>
@@ -118,6 +124,8 @@
       <w>felicitaciones</w>
       <w>finaliza</w>
       <w>finalizar</w>
+      <w>firebase</w>
+      <w>firestore</w>
       <w>fluido</w>
       <w>fondos</w>
       <w>forma</w>
@@ -127,6 +135,7 @@
       <w>gracias</w>
       <w>guarda</w>
       <w>guardada</w>
+      <w>guardados</w>
       <w>guardamos</w>
       <w>guardar</w>
       <w>guion</w>
@@ -139,6 +148,7 @@
       <w>idatos</w>
       <w>igual</w>
       <w>ilast</w>
+      <w>imagen</w>
       <w>importante</w>
       <w>imágenes</w>
       <w>incorrecta</w>
@@ -202,6 +212,7 @@
       <w>palabras</w>
       <w>pantalla</w>
       <w>parte</w>
+      <w>pasamos</w>
       <w>perder</w>
       <w>perderás</w>
       <w>perfil</w>
@@ -218,12 +229,14 @@
       <w>presionar</w>
       <w>primera</w>
       <w>propio</w>
+      <w>pudo</w>
       <w>puntaje</w>
       <w>queda</w>
       <w>rango</w>
       <w>recibir</w>
       <w>reconocimiento</w>
       <w>recorremos</w>
+      <w>recuperamos</w>
       <w>reemplazar</w>
       <w>registro</w>
       <w>remplaza</w>
@@ -242,6 +255,7 @@
       <w>satisfecho</w>
       <w>según</w>
       <w>separamos</w>
+      <w>sesión</w>
       <w>sexo</w>
       <w>siempre</w>
       <w>siguiente</w>

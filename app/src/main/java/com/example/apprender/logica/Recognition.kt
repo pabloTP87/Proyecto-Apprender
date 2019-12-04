@@ -7,8 +7,7 @@ import android.os.Bundle
 import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
-import android.support.design.widget.FloatingActionButton
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.widget.Button
 import android.widget.EditText
 import com.example.apprender.R

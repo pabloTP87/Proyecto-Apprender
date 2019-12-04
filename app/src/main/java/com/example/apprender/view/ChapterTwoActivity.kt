@@ -1,11 +1,11 @@
 package com.example.apprender.view
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.apprender.R
 import com.example.apprender.view.adapters.LessonsAdapter
 import com.example.apprender.view.supportClasses.ItemsLessonsList

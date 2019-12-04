@@ -1,12 +1,12 @@
 package com.example.apprender.view.adapters
 
 import android.content.Context
-import android.support.v4.view.PagerAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.viewpager.widget.PagerAdapter
 import com.example.apprender.R
 import com.example.apprender.view.supportClasses.IntroScreenItems
 import kotlinx.android.synthetic.main.layout_intro_screen.view.*

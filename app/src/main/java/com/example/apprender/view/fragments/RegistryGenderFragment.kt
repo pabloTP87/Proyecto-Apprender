@@ -2,17 +2,15 @@ package com.example.apprender.view.fragments
 
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RadioGroup
-
+import androidx.fragment.app.Fragment
 import com.example.apprender.R
 import com.example.apprender.interfaces.IDatosUsuario
-import kotlinx.android.synthetic.main.fragment_registry_gender.*
 
 class RegistryGenderFragment : Fragment() {
 
@@ -56,7 +54,7 @@ class RegistryGenderFragment : Fragment() {
 
             val gender: String
 
-            when (gender_group.checkedRadioButtonId){
+            when (genderGroup.checkedRadioButtonId){
 
                 R.id.rbHombre -> {
                     gender = "hombre"

@@ -118,24 +118,22 @@
 
     <Button
             android:id="@+id/btnGuardar"
-            android:layout_width="234dp"
-            android:layout_height="40dp"
+            android:layout_width="286dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:background="@drawable/btn_short_shape"
             android:backgroundTint="@color/colorPrimaryDark"
             android:text="@string/guardar"
             android:textColor="@color/colorWhite"
-            android:textSize="16sp" />
-
-    <Button
-            android:id="@+id/btnVolver"
+            android:textSize="20sp"
+            android:textAllCaps="false"/>
+    <ProgressBar
+            android:id="@+id/user_save_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_width="234dp"
-            android:layout_height="40dp"
-            android:background="@drawable/btn_short_border_shape"
-            android:text="@string/volver"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="16sp" />
+            android:visibility="invisible"
+            android:indeterminate="true" />
 
 </LinearLayout>

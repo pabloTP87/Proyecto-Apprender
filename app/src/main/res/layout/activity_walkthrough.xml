@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".view.WalkthroughActivity">
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
             android:id="@+id/intro_view_pager"
             android:layout_width="0dp"
             android:layout_height="370dp"
@@ -48,7 +48,7 @@
             app:layout_constraintTop_toBottomOf="@+id/intro_view_pager"
             app:layout_constraintVertical_bias="0.083"/>
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
             app:tabBackground="@drawable/indicator_selector"
             app:tabIndicatorColor="@android:color/transparent"
             android:layout_width="86dp"
@@ -65,7 +65,7 @@
             app:layout_constraintVertical_bias="0.111">
 
 
-    </android.support.design.widget.TabLayout>
+    </com.google.android.material.tabs.TabLayout>
     <Button
             android:background="@drawable/intro_btn_start"
             android:text="@string/text_btn_start"
@@ -89,4 +89,4 @@
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintVertical_bias="0.095"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

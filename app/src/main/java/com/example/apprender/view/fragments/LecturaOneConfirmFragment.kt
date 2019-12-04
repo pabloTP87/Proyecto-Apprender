@@ -4,16 +4,18 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-
+import androidx.fragment.app.Fragment
 import com.example.apprender.R
 import com.example.apprender.logica.LeccionStat
+import com.example.apprender.logica.Session
 import com.example.apprender.view.ChapterTwoActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.leccion_confirm_dialog.view.*
 
 class LecturaOneConfirmFragment : Fragment() {
@@ -26,10 +28,15 @@ class LecturaOneConfirmFragment : Fragment() {
 
     private lateinit var txtTiempo: TextView
 
+    val db = FirebaseFirestore.getInstance()
+    lateinit var session: Session
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        session = Session(requireContext())
+
         val view = inflater.inflate(R.layout.fragment_lectura_one_confirm, container, false)
 
         val txtPuntaje = view.findViewById<TextView>(R.id.txtPuntaje)
@@ -57,28 +64,57 @@ class LecturaOneConfirmFragment : Fragment() {
 
         btnGuardar.setOnClickListener {
 
-            val confirmDialog = LayoutInflater.from(this.activity).inflate(R.layout.leccion_confirm_dialog,null)
-            val builder = AlertDialog.Builder(this.activity).setView(confirmDialog)
+            val time = arguments!!.getLong("tiempo")
 
-            val alertDialog = builder.show()
-
-            confirmDialog.btn_continuar.setOnClickListener {
-                alertDialog.dismiss()
-
-                val intent = Intent(this.activity, ChapterTwoActivity::class.java)
-                startActivity(intent)
-            }
+            saveLeccionThree(puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),leccionIncorrecta.toInt(),true)
         }
 
         // Inflate the layout for this fragment
         return view
     }
 
+    fun saveLeccionThree(puntaje: Int,tiempo: Int, correctas: Int, incorrectas: Int, estado: Boolean){
+
+        val userData = session.getUserData()
+        val rut = userData.get(Session.KEY_RUT)
+
+        val leccion = hashMapOf(
+            "puntaje" to puntaje,
+            "tiempo" to tiempo,
+            "correctas" to correctas,
+            "incorrectas" to incorrectas,
+            "estado" to estado
+        )
+
+        db.collection("usuarios").document(rut!!).collection("capitulo_2")
+            .document("leccion_3").set(leccion).addOnCompleteListener {
+                if (it.isSuccessful){
+
+                    Log.d("Documento agregado","$leccion")
+
+                    val confirmDialog = LayoutInflater.from(this.activity).inflate(R.layout.leccion_confirm_dialog,null)
+                    val builder = AlertDialog.Builder(this.activity).setView(confirmDialog)
+
+                    val alertDialog = builder.show()
+
+                    confirmDialog.btn_continuar.setOnClickListener {
+                        alertDialog.dismiss()
+
+                        val intent = Intent(this.activity, ChapterTwoActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                }else{
+                    Log.e("Save error", "No se pudo guardar el usuario")
+                }
+            }
+    }
+
     interface sendTimeChronometer{
         fun stopTimer()
     }
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
 
         iStopTimer = activity as sendTimeChronometer
