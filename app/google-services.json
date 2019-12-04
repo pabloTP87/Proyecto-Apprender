@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "297949786240",
+    "firebase_url": "https://apprender-86601.firebaseio.com",
+    "project_id": "apprender-86601",
+    "storage_bucket": "apprender-86601.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297949786240:android:185a423f97767a16b03665",
+        "android_client_info": {
+          "package_name": "com.example.apprender"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297949786240-k8r8q53iosqfj18teesp7aqrea8kgudc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apprender",
+            "certificate_hash": "7d3085b02eb8454907a32ab68610560fd149ec17"
+          }
+        },
+        {
+          "client_id": "297949786240-dls7lqhk6eo6nb35e5n9d8dh30up2mbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2JI4KC0WxZZdk75ZAUTg7HIJUhrjBeuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297949786240-dls7lqhk6eo6nb35e5n9d8dh30up2mbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
