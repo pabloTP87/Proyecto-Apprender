@@ -19,18 +19,19 @@ class IntroEncuestaActivity : AppCompatActivity() {
         val btnComenzar = findViewById<Button>(R.id.btn_comenzar_encuesta)
 
         backLogin.setOnClickListener {
-            this.finish()
+            finish()
         }
 
         btnComenzar.setOnClickListener {
             val intent = Intent(this, EncuestaActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-
-        this.finish()
+        moveTaskToBack(true)
+        finish()
     }
 }

@@ -1,17 +1,15 @@
 package com.example.apprender.view
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.os.SystemClock
-import android.view.LayoutInflater
 import android.widget.Chronometer
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.apprender.R
 import com.example.apprender.interfaces.ILeccionVocalesOne
+import com.example.apprender.logica.CustomDialog
 import com.example.apprender.view.fragments.*
-import kotlinx.android.synthetic.main.leccion_close_dialog.view.*
 
 class LeccionLecturaOneActivity : AppCompatActivity(), ILeccionVocalesOne, LecturaOneConfirmFragment.sendTimeChronometer {
 
@@ -116,23 +114,34 @@ class LeccionLecturaOneActivity : AppCompatActivity(), ILeccionVocalesOne, Lectu
     }
 
     private fun showCloseDialog() {
-        val confirmDialog = LayoutInflater.from(this).inflate(R.layout.leccion_close_dialog,null)
-        val builder = AlertDialog.Builder(this).setView(confirmDialog)
+        val customDialog = CustomDialog.Builder()
+            .setImagen(R.drawable.ic_close_leccion)
+            .setTitulo("Perderás tu avance")
+            .setDescripcion("¿deseas terminar la lección?")
+            .setContinueButtonVisible(false)
+            .setContinueButtonText("")
+            .setPositiveButtonText("Si")
+            .setCancelButtonText("No")
+            .build()
 
-        val alertDialog = builder.show()
+        customDialog.show(supportFragmentManager,"Custom close dialog")
+        customDialog.isCancelable = false
 
-        alertDialog.setCanceledOnTouchOutside(false)
+        customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
+            override fun onPositiveButtonClick() {
+                customDialog.dismiss()
+                chronometer.stop()
+                finish()
+            }
 
-        confirmDialog.btn_si.setOnClickListener {
-            alertDialog.dismiss()
-            chronometer.stop()
-            this.finish()
-        }
+            override fun onCancelButtonClick() {
+                customDialog.dismiss()
+                chronometer.base = SystemClock.elapsedRealtime() + timeStop
+                chronometer.start()
+            }
 
-        confirmDialog.btn_no.setOnClickListener {
-            alertDialog.dismiss()
-            chronometer.base = SystemClock.elapsedRealtime() + timeStop
-            chronometer.start()
-        }
+            override fun onContinueButtonClick() {
+            }
+        })
     }
 }

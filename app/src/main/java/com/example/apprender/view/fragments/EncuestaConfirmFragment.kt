@@ -1,34 +1,34 @@
 package com.example.apprender.view.fragments
 
-import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.apprender.R
+import com.example.apprender.logica.CustomDialog
 import com.example.apprender.logica.Session
-import com.example.apprender.view.ChapterTwoActivity
 import com.example.apprender.view.MainActivity
-import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.encuesta_confirm_dialog.view.*
-import kotlinx.android.synthetic.main.encuesta_confirm_dialog.view.btn_continuar
-import kotlinx.android.synthetic.main.leccion_confirm_dialog.view.*
+import com.example.apprender.viewmodel.FirestoreViewModel
+import kotlinx.android.synthetic.main.fragment_encuesta_confirm.*
 
 class EncuestaConfirmFragment : Fragment() {
 
-    val db = FirebaseFirestore.getInstance()
     lateinit var session: Session
+    lateinit var viewModel: FirestoreViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         session = Session(requireContext())
+        viewModel = ViewModelProviders.of(requireActivity())[FirestoreViewModel::class.java]
 
         val view = inflater.inflate(R.layout.fragment_encuesta_confirm, container, false)
 
@@ -40,47 +40,52 @@ class EncuestaConfirmFragment : Fragment() {
         val respuestaThree = arguments?.getString("respuesta_three")
 
         btnGuardar.setOnClickListener {
+            val userData = session.getUserData()
+            val rut = userData[Session.KEY_RUT]
 
-            saveEncuesta(respuestaOne!!, respuestaTwo!!, respuestaThree!!)
+            encuesta_save_charge.indeterminateDrawable.setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN)
+            encuesta_save_charge.visibility = View.VISIBLE
+            viewModel.saveEncuestaData(respuestaOne!!,respuestaTwo!!,respuestaThree!!,rut!!)
         }
+
+        observeSaveEncuesta()
+
         // Inflate the layout for this fragment
         return view
     }
 
-    fun saveEncuesta(respuesta1: String, respuesta2: String, respuesta3: String){
+    private fun observeSaveEncuesta(){
 
-        val userData = session.getUserData()
-        val rut = userData.get(Session.KEY_RUT)
+        viewModel.fetchDataComplition().observe(this, Observer {
+            if (it){
+                encuesta_save_charge.visibility = View.INVISIBLE
+                val customDialog = CustomDialog.Builder()
+                    .setImagen(R.drawable.ic_check_registry)
+                    .setTitulo("Encuesta enviada")
+                    .setDescripcion("Muchas gracias")
+                    .setContinueButtonVisible(true)
+                    .setContinueButtonText("Finalizar")
+                    .build()
 
-        val encuesta = hashMapOf(
-            "respuesta_1" to respuesta1,
-            "respuesta_2" to respuesta2,
-            "respuesta_3" to respuesta3
-        )
+                customDialog.isCancelable = false
+                customDialog.show(fragmentManager!!, "custom dialog")
 
-        db.collection("usuarios").document(rut!!).collection("encuesta")
-            .document("encuesta - $rut").set(encuesta).addOnCompleteListener {
-                if (it.isSuccessful){
-
-                    Log.d("Documento agregado","$encuesta")
-
-                    val confirmDialog = LayoutInflater.from(this.context).inflate(R.layout.encuesta_confirm_dialog,null)
-                    val builder = AlertDialog.Builder(this.activity).setView(confirmDialog)
-
-                    val alertDialog = builder.show()
-
-                    confirmDialog.btn_continuar.setOnClickListener {
-                        alertDialog.dismiss()
-
-                        val intent = Intent(this.activity, MainActivity::class.java)
-                        startActivity(intent)
+                customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
+                    override fun onPositiveButtonClick() {
+                        // No se Utiliza en este dialog
                     }
 
-                }else{
-                    Log.e("Save error", "No se pudo guardar el usuario")
-                }
+                    override fun onCancelButtonClick() {
+                        // No se Utiliza en este dialog
+                    }
+
+                    override fun onContinueButtonClick() {
+                        val intent = Intent(requireContext(),MainActivity::class.java)
+                        startActivity(intent)
+                        activity!!.finish()
+                    }
+                })
             }
+        })
     }
-
-
 }

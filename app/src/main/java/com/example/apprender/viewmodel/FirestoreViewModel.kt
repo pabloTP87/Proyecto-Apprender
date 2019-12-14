@@ -14,8 +14,20 @@ class FirestoreViewModel : ViewModel() {
         firestoreUseCase.setUserFirestore(nombre, apellido, edad, rut, genero, fecha)
     }
 
+    fun saveLeccionData(capitulo: String, numLeccion: String, puntaje: Int, tiempo: Int, correctas: Int, incorrectas: Int, estado: String, rut: String){
+        firestoreUseCase.setLeccionFirestore(capitulo, numLeccion, puntaje, tiempo, correctas, incorrectas, estado, rut)
+    }
+
+    fun saveEncuestaData(respuesta1: String, respuesta2: String, respuesta3: String, rut: String){
+        firestoreUseCase.setEncuestaFirestore(respuesta1, respuesta2, respuesta3, rut)
+    }
+
     fun validarUsuario(rut: String){
         firestoreUseCase.loginUser(rut)
+    }
+
+    fun actualizarEstadoLeccion(rut: String, capitulo: String, leccion: String, estado: String){
+        firestoreUseCase.actualizarEstado(rut, capitulo, leccion, estado)
     }
 
     fun fetchDataComplition(): LiveData<Boolean>{
@@ -33,5 +45,4 @@ class FirestoreViewModel : ViewModel() {
         }
         return data
     }
-
 }

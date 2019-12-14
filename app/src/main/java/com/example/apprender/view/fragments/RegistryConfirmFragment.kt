@@ -2,7 +2,6 @@ package com.example.apprender.view.fragments
 
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,19 +9,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.apprender.R
 import com.example.apprender.logica.CustomDialog
+import com.example.apprender.logica.Session
 import com.example.apprender.view.MainActivity
 import com.example.apprender.viewmodel.FirestoreViewModel
 import com.google.firebase.Timestamp
 import kotlinx.android.synthetic.main.fragment_registry_confirm.*
+import kotlinx.android.synthetic.main.fragment_registry_dni.*
 
 class RegistryConfirmFragment : Fragment() {
 
     private var viewModel = FirestoreViewModel()
+    lateinit var session: Session
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,7 @@ class RegistryConfirmFragment : Fragment() {
     ): View? {
 
         viewModel = ViewModelProviders.of(requireActivity()).get(FirestoreViewModel::class.java)
+        session = Session(requireContext())
 
         val view = inflater.inflate(R.layout.fragment_registry_confirm, container, false)
 
@@ -64,15 +68,14 @@ class RegistryConfirmFragment : Fragment() {
             user_save_charge.visibility = View.VISIBLE
             // Firestore save user
             viewModel.crearUsuario(nombre!!,apepat!!,edad,rutDB!!.toInt(),genero!!, Timestamp(java.util.Date()))
-
         }
 
-        saveObserve()
+        saveObserve(nombre!!,rutDB!!)
         // Inflate the layout for this fragment
         return view
     }
 
-    private fun saveObserve(){
+    private fun saveObserve(nombre: String, rut: String){
 
         viewModel.fetchDataComplition().observe(this, Observer {
             if (it){
@@ -81,7 +84,8 @@ class RegistryConfirmFragment : Fragment() {
                     .setImagen(R.drawable.ic_check_registry)
                     .setTitulo("Felicitaciones")
                     .setDescripcion("has terminado tu registro")
-                    .setPositiveButtonText("Iniciar")
+                    .setContinueButtonVisible(true)
+                    .setContinueButtonText("Iniciar")
                     .build()
 
                 customDialog.show(fragmentManager!!,"Custom dialog")
@@ -89,8 +93,27 @@ class RegistryConfirmFragment : Fragment() {
 
                 customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
                     override fun onPositiveButtonClick() {
-                        val intent = Intent(requireActivity(),MainActivity::class.java)
+                    }
+
+                    override fun onCancelButtonClick() {
+                    }
+
+                    override fun onContinueButtonClick() {
+                        session.createLoginSession(nombre, rut)
+                        // Inicializamos las lecciones gurdandolas con puntaje 0
+                        viewModel.saveLeccionData("capitulo_1","leccion_1",0,0,0,0,"enabled",rut)
+                        viewModel.saveLeccionData("capitulo_1","leccion_2",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_1","leccion_3",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_1",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_2",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_3",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_4",0,0,0,0,"disabled",rut)
+                        // Inicializamos la encuesta de satisfacción con datos vacios
+                        viewModel.saveEncuestaData("","","",rut)
+                        val intent = Intent(requireContext(),MainActivity::class.java)
                         startActivity(intent)
+                        Toast.makeText(requireContext(),"Bienvenido $nombre", Toast.LENGTH_SHORT).show()
+                        activity!!.finish()
                     }
                 })
             }

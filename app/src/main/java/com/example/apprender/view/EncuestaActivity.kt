@@ -1,15 +1,13 @@
 package com.example.apprender.view
 
-import android.app.AlertDialog
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.apprender.R
 import com.example.apprender.interfaces.ISendEncuesta
+import com.example.apprender.logica.CustomDialog
 import com.example.apprender.view.fragments.*
-import kotlinx.android.synthetic.main.leccion_close_dialog.view.*
 
 class EncuestaActivity : AppCompatActivity() , ISendEncuesta {
 
@@ -72,20 +70,32 @@ class EncuestaActivity : AppCompatActivity() , ISendEncuesta {
     }
 
     private fun showCloseDialog() {
-        val confirmDialog = LayoutInflater.from(this).inflate(R.layout.encuesta_close_dialog,null)
-        val builder = AlertDialog.Builder(this).setView(confirmDialog)
+        val customDialog = CustomDialog.Builder()
+            .setImagen(R.drawable.ic_close_leccion)
+            .setTitulo("Perderás tu avance")
+            .setDescripcion("¿deseas terminar la encuesta?")
+            .setContinueButtonVisible(false)
+            .setContinueButtonText("")
+            .setPositiveButtonText("Si")
+            .setCancelButtonText("No")
+            .build()
 
-        val alertDialog = builder.show()
+        customDialog.show(supportFragmentManager,"Custom close dialog")
+        customDialog.isCancelable = false
 
-        alertDialog.setCanceledOnTouchOutside(false)
+        customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
+            override fun onPositiveButtonClick() {
+                customDialog.dismiss()
+                finish()
+            }
 
-        confirmDialog.btn_si.setOnClickListener {
-            alertDialog.dismiss()
-            this.finish()
-        }
+            override fun onCancelButtonClick() {
+                customDialog.dismiss()
+            }
 
-        confirmDialog.btn_no.setOnClickListener {
-            alertDialog.dismiss()
-        }
+            override fun onContinueButtonClick() {
+            }
+
+        })
     }
 }

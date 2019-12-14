@@ -10,12 +10,13 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apprender.R
+import com.example.apprender.logica.CustomDialog
 import com.example.apprender.view.ChapterOneActivity
 import com.example.apprender.view.ChapterTwoActivity
 import com.example.apprender.view.IntroEncuestaActivity
 import com.example.apprender.view.supportClasses.ItemsChapterCard
 
-class ChapterAdapter(val context: Context, val chapterDataList: ArrayList<ItemsChapterCard>) : RecyclerView.Adapter<ChapterAdapter.viewHolder>() {
+class ChapterAdapter(val context: Context, private val chapterDataList: ArrayList<ItemsChapterCard>, private val clickListener: (ItemsChapterCard) -> Unit) : RecyclerView.Adapter<ChapterAdapter.viewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): viewHolder {
 
@@ -29,29 +30,7 @@ class ChapterAdapter(val context: Context, val chapterDataList: ArrayList<ItemsC
     }
 
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
-
-        holder.chapterTitle.text = chapterDataList[position].title
-        holder.chapterDescription.text = chapterDataList[position].description
-        holder.chapterImg.setImageResource(chapterDataList[position].img)
-
-        holder.chapterCard.setOnClickListener {
-            when(position){
-                0 -> {
-                    val intent = Intent(context,ChapterOneActivity::class.java)
-                    context.startActivity(intent)
-                }
-
-                1 -> {
-                    val intent = Intent(context,ChapterTwoActivity::class.java)
-                    context.startActivity(intent)
-                }
-
-                2 -> {
-                    val intent = Intent(context,IntroEncuestaActivity::class.java)
-                    context.startActivity(intent)
-                }
-            }
-        }
+        holder.bind(chapterDataList[position], clickListener)
     }
 
     class viewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -68,6 +47,12 @@ class ChapterAdapter(val context: Context, val chapterDataList: ArrayList<ItemsC
             chapterCard = itemView.findViewById(R.id.cardView) as CardView
         }
 
+        fun bind(item: ItemsChapterCard, clickListener: (ItemsChapterCard) -> Unit){
+            chapterTitle.text = item.title
+            chapterDescription.text = item.description
+            chapterImg.setImageResource(item.img)
+            itemView.setOnClickListener { clickListener(item) }
+        }
     }
 }
 

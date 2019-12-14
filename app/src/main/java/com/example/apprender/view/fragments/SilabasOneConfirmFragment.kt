@@ -1,22 +1,28 @@
 package com.example.apprender.view.fragments
 
-import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.apprender.R
+import com.example.apprender.logica.CustomDialog
 import com.example.apprender.logica.LeccionStat
 import com.example.apprender.logica.Session
 import com.example.apprender.view.ChapterTwoActivity
+import com.example.apprender.view.LeccionVocalesOneActivity
+import com.example.apprender.view.MainActivity
+import com.example.apprender.viewmodel.FirestoreViewModel
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.leccion_confirm_dialog.view.*
+import kotlinx.android.synthetic.main.fragment_silabas_one_confirm.*
 
 class SilabasOneConfirmFragment : Fragment() {
 
@@ -28,8 +34,8 @@ class SilabasOneConfirmFragment : Fragment() {
 
     private lateinit var txtTiempo: TextView
 
-    val db = FirebaseFirestore.getInstance()
     lateinit var session: Session
+    private lateinit var viewModel: FirestoreViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +43,7 @@ class SilabasOneConfirmFragment : Fragment() {
     ): View? {
 
         session = Session(requireContext())
+        viewModel = ViewModelProviders.of(requireActivity()).get(FirestoreViewModel::class.java)
 
         val view = inflater.inflate(R.layout.fragment_silabas_one_confirm, container, false)
 
@@ -65,50 +72,99 @@ class SilabasOneConfirmFragment : Fragment() {
 
         btnGuardar.setOnClickListener {
 
+            val userData = session.getUserData()
+            val rut = userData[Session.KEY_RUT]
             val time = arguments!!.getLong("tiempo")
+            val capitulo = "capitulo_2"
+            val leccion = "leccion_1"
 
-            saveLeccionOne(puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),leccionIncorrecta.toInt(),true)
+            if (leccionIncorrecta.toInt() >= 2){
+                val customDialog = CustomDialog.Builder()
+                    .setImagen(R.drawable.ic_close_leccion)
+                    .setTitulo("No superaste la lección")
+                    .setDescripcion("¿quieres volver a intentarlo?")
+                    .setContinueButtonVisible(false)
+                    .setPositiveButtonText("Si")
+                    .setCancelButtonText("No")
+                    .build()
+
+                customDialog.show(fragmentManager!!, "custom dialog")
+                customDialog.isCancelable = false
+
+                customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
+                    override fun onPositiveButtonClick() {
+                        // Volvemos a mostrar la leccion
+                        val intent = Intent(requireContext(), LeccionVocalesOneActivity::class.java)
+                        startActivity(intent)
+                        activity!!.finish()
+                    }
+
+                    override fun onCancelButtonClick() {
+                        // guardamos los datos de la leccion no superada con estado enabled = aun disponible
+                        viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                            leccionIncorrecta.toInt(),"enabled", rut!!)
+
+                        val intent = Intent(requireContext(), MainActivity::class.java)
+                        startActivity(intent)
+                        activity!!.finish()
+
+                    }
+
+                    override fun onContinueButtonClick() {
+                        // No esta disponible en este custom dialog
+                    }
+                })
+            }else{
+                // Guardamos datos de la lección superada
+                leccion_save_charge.indeterminateDrawable.setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN)
+                leccion_save_charge.visibility = View.VISIBLE
+                viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                    leccionIncorrecta.toInt(),"success", rut!!)
+                // Actualizamos estado de leccion siguiente a enabled = habilitada
+                viewModel.actualizarEstadoLeccion(rut,capitulo,"leccion_2","enabled")
+            }
         }
+
+        observeLeccionDataComplete()
 
         // Inflate the layout for this fragment
         return view
     }
 
-    fun saveLeccionOne(puntaje: Int,tiempo: Int, correctas: Int, incorrectas: Int, estado: Boolean){
+    private fun observeLeccionDataComplete(){
 
-        val userData = session.getUserData()
-        val rut = userData.get(Session.KEY_RUT)
+        viewModel.fetchDataComplition().observe(this, Observer {
+            if (it){
+                leccion_save_charge.visibility = View.INVISIBLE
+                val customDialog = CustomDialog.Builder()
+                    .setImagen(R.drawable.ic_check_registry)
+                    .setTitulo("Fin de la lección")
+                    .setDescripcion("continua aprendiendo")
+                    .setContinueButtonVisible(true)
+                    .setContinueButtonText("Continuar")
+                    .build()
 
-        val leccion = hashMapOf(
-            "puntaje" to puntaje,
-            "tiempo" to tiempo,
-            "correctas" to correctas,
-            "incorrectas" to incorrectas,
-            "estado" to estado
-        )
+                customDialog.show(fragmentManager!!, "custom dialog")
+                customDialog.isCancelable = true
 
-        db.collection("usuarios").document(rut!!).collection("capitulo_2")
-            .document("leccion_1").set(leccion).addOnCompleteListener {
-                if (it.isSuccessful){
-
-                    Log.d("Documento agregado","$leccion")
-
-                    val confirmDialog = LayoutInflater.from(this.activity).inflate(R.layout.leccion_confirm_dialog,null)
-                    val builder = AlertDialog.Builder(this.activity).setView(confirmDialog)
-
-                    val alertDialog = builder.show()
-
-                    confirmDialog.btn_continuar.setOnClickListener {
-                        alertDialog.dismiss()
-
-                        val intent = Intent(this.activity, ChapterTwoActivity::class.java)
-                        startActivity(intent)
+                customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
+                    override fun onPositiveButtonClick() {
+                        // No esta disponible en este custom dialog
                     }
 
-                }else{
-                    Log.e("Save error", "No se pudo guardar el usuario")
-                }
+                    override fun onCancelButtonClick() {
+                        // No esta disponible en este custom dialog
+                    }
+
+                    override fun onContinueButtonClick() {
+                        // No esta disponible en este custom dialog
+                        val intent = Intent(requireContext(), ChapterTwoActivity::class.java)
+                        startActivity(intent)
+                        activity!!.finish()
+                    }
+                })
             }
+        })
     }
 
     interface sendTimeChronometer{

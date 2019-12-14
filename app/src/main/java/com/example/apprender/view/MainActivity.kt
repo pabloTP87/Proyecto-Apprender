@@ -85,8 +85,8 @@ class MainActivity : AppCompatActivity() {
         if (id == R.id.check_session){
             val userData = session.getUserData()
 
-            val nombre = userData.get(Session.KEY_NAME)
-            val rut = userData.get(Session.KEY_RUT)
+            val nombre = userData[Session.KEY_NAME]
+            val rut = userData[Session.KEY_RUT]
 
             Toast.makeText(this,"nombre: $nombre rut: $rut",Toast.LENGTH_SHORT).show()
         }

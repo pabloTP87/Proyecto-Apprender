@@ -8,6 +8,9 @@
       <w>acierto</w>
       <w>aciertos</w>
       <w>actividad</w>
+      <w>actualizado</w>
+      <w>actualizamos</w>
+      <w>actualizar</w>
       <w>agregado</w>
       <w>agregamos</w>
       <w>agregar</w>
@@ -25,6 +28,7 @@
       <w>aprendió</w>
       <w>asignamos</w>
       <w>asociación</w>
+      <w>asociando</w>
       <w>atrás</w>
       <w>avance</w>
       <w>avanzando</w>
@@ -50,12 +54,14 @@
       <w>comencemos</w>
       <w>comenzar</w>
       <w>completa</w>
+      <w>completar</w>
       <w>completo</w>
       <w>complition</w>
       <w>comprensión</w>
       <w>configurar</w>
       <w>confirmación</w>
       <w>considera</w>
+      <w>consultado</w>
       <w>contenido</w>
       <w>contiene</w>
       <w>continuación</w>
@@ -77,6 +83,7 @@
       <w>dato</w>
       <w>datos</w>
       <w>debe</w>
+      <w>debes</w>
       <w>defecto</w>
       <w>dejamos</w>
       <w>dentro</w>
@@ -92,6 +99,8 @@
       <w>devuelve</w>
       <w>digito</w>
       <w>dinámica</w>
+      <w>dispoible</w>
+      <w>disponible</w>
       <w>documento</w>
       <w>donde</w>
       <w>dígito</w>
@@ -105,6 +114,7 @@
       <w>entregaremos</w>
       <w>enviada</w>
       <w>enviar</w>
+      <w>envía</w>
       <w>equivalente</w>
       <w>escoba</w>
       <w>escucha</w>
@@ -114,6 +124,7 @@
       <w>estado</w>
       <w>este</w>
       <w>esto</w>
+      <w>estudiadas</w>
       <w>evaluamos</w>
       <w>evaluando</w>
       <w>evento</w>
@@ -127,6 +138,7 @@
       <w>firebase</w>
       <w>firestore</w>
       <w>fluido</w>
+      <w>flujo</w>
       <w>fondos</w>
       <w>forma</w>
       <w>función</w>
@@ -140,6 +152,8 @@
       <w>guardar</w>
       <w>guion</w>
       <w>guión</w>
+      <w>gurdandolas</w>
+      <w>habilitada</w>
       <w>habilitamos</w>
       <w>hacia</w>
       <w>herramienta</w>
@@ -155,14 +169,17 @@
       <w>incorrectas</w>
       <w>incorrecto</w>
       <w>inflando</w>
+      <w>ingresa</w>
       <w>ingresado</w>
       <w>ingresar</w>
       <w>ingresaras</w>
+      <w>inicializamos</w>
       <w>iniciar</w>
       <w>inicio</w>
       <w>insatisfecho</w>
       <w>instanciar</w>
       <w>instrucciones</w>
+      <w>intentarlo</w>
       <w>interactua</w>
       <w>interactuar</w>
       <w>invalido</w>
@@ -172,6 +189,7 @@
       <w>leccion</w>
       <w>lecciones</w>
       <w>lección</w>
+      <w>leccíon</w>
       <w>lectura</w>
       <w>lista</w>
       <w>logotipo</w>
@@ -180,15 +198,19 @@
       <w>mantisa</w>
       <w>mantiza</w>
       <w>mantíza</w>
+      <w>marca</w>
+      <w>marcando</w>
       <w>matchentire</w>
       <w>mediante</w>
       <w>medio</w>
       <w>mejor</w>
       <w>microfono</w>
       <w>modo</w>
+      <w>mostrado</w>
       <w>mostramos</w>
       <w>mostrar</w>
       <w>msat</w>
+      <w>muchas</w>
       <w>mujer</w>
       <w>multiplica</w>
       <w>multiplicación</w>
@@ -213,6 +235,7 @@
       <w>pantalla</w>
       <w>parte</w>
       <w>pasamos</w>
+      <w>pasaste</w>
       <w>perder</w>
       <w>perderás</w>
       <w>perfil</w>
@@ -223,6 +246,7 @@
       <w>personalizada</w>
       <w>personalizado</w>
       <w>personalizar</w>
+      <w>posicion</w>
       <w>posición</w>
       <w>pregunta</w>
       <w>preguntas</w>
@@ -232,8 +256,11 @@
       <w>pudo</w>
       <w>puntaje</w>
       <w>queda</w>
+      <w>quieres</w>
       <w>rango</w>
       <w>recibir</w>
+      <w>reconoce</w>
+      <w>reconociendo</w>
       <w>reconocimiento</w>
       <w>recorremos</w>
       <w>recuperamos</w>
@@ -254,7 +281,9 @@
       <w>satisfacción</w>
       <w>satisfecho</w>
       <w>según</w>
+      <w>selecciona</w>
       <w>separamos</w>
+      <w>separando</w>
       <w>sesión</w>
       <w>sexo</w>
       <w>siempre</w>
@@ -264,11 +293,16 @@
       <w>snackbar</w>
       <w>suma</w>
       <w>supera</w>
+      <w>superada</w>
+      <w>superado</w>
+      <w>superar</w>
+      <w>superaste</w>
       <w>sílabas</w>
       <w>tatetitotu</w>
       <w>tatetitotú</w>
       <w>tendrás</w>
       <w>terminado</w>
+      <w>terminar</w>
       <w>texto</w>
       <w>tiempo</w>
       <w>tiene</w>
@@ -279,7 +313,9 @@
       <w>usar</w>
       <w>usuario</w>
       <w>usuarios</w>
+      <w>utiliza</w>
       <w>utilizar</w>
+      <w>vacios</w>
       <w>vacío</w>
       <w>validación</w>
       <w>validado</w>
@@ -289,6 +325,7 @@
       <w>verificador</w>
       <w>verificar</w>
       <w>vocales</w>
+      <w>volvemos</w>
       <w>volver</w>
       <w>walkthrough</w>
     </words>

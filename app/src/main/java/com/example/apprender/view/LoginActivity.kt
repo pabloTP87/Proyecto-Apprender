@@ -1,8 +1,11 @@
 package com.example.apprender.view
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -49,6 +52,8 @@ class LoginActivity : AppCompatActivity() {
             if (rut.isEmpty()){
                 Toast.makeText(this,"Ingresa tu contraseña",Toast.LENGTH_SHORT).show()
             } else{
+                login_save_charge.indeterminateDrawable.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN)
+                login_save_charge.visibility = View.VISIBLE
                 viewModel.validarUsuario(rut)
             }
 
@@ -74,8 +79,10 @@ class LoginActivity : AppCompatActivity() {
     private fun validarLoginUsuario(){
         viewModel.fetchDataComplition().observe(this, Observer {
             if (it){
+                login_save_charge.visibility = View.INVISIBLE
                 getSessionData()
             }else{
+                login_save_charge.visibility = View.INVISIBLE
                 Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show()
             }
         })
