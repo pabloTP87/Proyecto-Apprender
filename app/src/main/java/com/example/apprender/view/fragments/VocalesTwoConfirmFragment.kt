@@ -18,7 +18,7 @@ import com.example.apprender.R
 import com.example.apprender.logica.CustomDialog
 import com.example.apprender.logica.Session
 import com.example.apprender.view.ChapterOneActivity
-import com.example.apprender.view.LeccionVocalesOneActivity
+import com.example.apprender.view.LeccionVocalesTwoActivity
 import com.example.apprender.view.MainActivity
 import com.example.apprender.viewmodel.FirestoreViewModel
 import kotlinx.android.synthetic.main.fragment_vocales_two_confirm.*
@@ -96,14 +96,14 @@ class VocalesTwoConfirmFragment : Fragment() {
                 customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
                     override fun onPositiveButtonClick() {
                         // Volvemos a mostrar la leccion
-                        val intent = Intent(requireContext(), LeccionVocalesOneActivity::class.java)
+                        val intent = Intent(requireContext(), LeccionVocalesTwoActivity::class.java)
                         startActivity(intent)
                         activity!!.finish()
                     }
 
                     override fun onCancelButtonClick() {
                         // guardamos los datos de la leccion no superada con estado false
-                        viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                        viewModel.saveLeccionData(capitulo,leccion,"Asociando Imágenes",puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
                             leccionIncorrecta.toInt(),"enabled", rut!!)
 
                         val intent = Intent(requireContext(), MainActivity::class.java)
@@ -120,7 +120,7 @@ class VocalesTwoConfirmFragment : Fragment() {
                 // Guardamos datos de la lección superada
                 leccion_save_charge.indeterminateDrawable.setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN)
                 leccion_save_charge.visibility = View.VISIBLE
-                viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                viewModel.saveLeccionData(capitulo,leccion,"Asociando Imágenes",puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
                     leccionIncorrecta.toInt(),"success", rut!!)
                 // Actualizamos estado de leccion siguiente a enabled = habilitada
                 viewModel.actualizarEstadoLeccion(rut,capitulo,"leccion_3","enabled")

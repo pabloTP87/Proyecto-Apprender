@@ -1,5 +1,6 @@
 package com.example.apprender.view.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
@@ -27,6 +28,13 @@ class LeccionImgOFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_leccion_img_o, container, false)
+
+        val a = MediaPlayer.create(requireContext(),R.raw.a)
+        val e = MediaPlayer.create(requireContext(),R.raw.e)
+        val i = MediaPlayer.create(requireContext(),R.raw.i)
+        val o = MediaPlayer.create(requireContext(),R.raw.o)
+        val u = MediaPlayer.create(requireContext(),R.raw.u)
+
         layout = R.id.leccion_img_o_layout
         val mLayoutInflater = layoutInflater
         btnVerificar = view.findViewById(R.id.btnVerificar)
@@ -35,23 +43,28 @@ class LeccionImgOFragment : Fragment() {
         rgOptions.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId) {
                 R.id.a -> {
+                    a.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionImgOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
                 R.id.e -> {
+                    e.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionImgOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
                 R.id.i -> {
+                    i.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionImgOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
 
                 R.id.o -> {
+                    o.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionImgOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
                 R.id.u -> {
+                    u.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionImgOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }

@@ -17,8 +17,7 @@ import com.example.apprender.logica.LeccionStat
 import com.example.apprender.R
 import com.example.apprender.logica.CustomDialog
 import com.example.apprender.logica.Session
-import com.example.apprender.view.ChapterOneActivity
-import com.example.apprender.view.LeccionVocalesOneActivity
+import com.example.apprender.view.LeccionVocalesThreeActivity
 import com.example.apprender.view.MainActivity
 import com.example.apprender.viewmodel.FirestoreViewModel
 import kotlinx.android.synthetic.main.fragment_vocales_three_confirm.*
@@ -94,14 +93,14 @@ class VocalesThreeConfirmFragment : Fragment() {
                 customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
                     override fun onPositiveButtonClick() {
                         // Volvemos a mostrar la leccion
-                        val intent = Intent(requireContext(), LeccionVocalesOneActivity::class.java)
+                        val intent = Intent(requireContext(), LeccionVocalesThreeActivity::class.java)
                         startActivity(intent)
                         activity!!.finish()
                     }
 
                     override fun onCancelButtonClick() {
                         // guardamos los datos de la leccion no superada con estado enabled = aun disponible
-                        viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                        viewModel.saveLeccionData(capitulo,leccion,"Completa las vocales",puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
                             leccionIncorrecta.toInt(),"enabled", rut!!)
 
                         val intent = Intent(requireContext(), MainActivity::class.java)
@@ -118,18 +117,10 @@ class VocalesThreeConfirmFragment : Fragment() {
                 // Guardamos datos de la lección superada
                 leccion_save_charge.indeterminateDrawable.setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN)
                 leccion_save_charge.visibility = View.VISIBLE
-                viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                viewModel.saveLeccionData(capitulo,leccion,"Completa las vocales",puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
                     leccionIncorrecta.toInt(),"success", rut!!)
-                // Inicializamos las lecciones del capitulo 2 y habilitamos la primera leccion
-                viewModel.saveLeccionData("capitulo_2","leccion_1",0,0,0,
-                    0,"enabled", rut)
-                viewModel.saveLeccionData("capitulo_2","leccion_2",0,0,0,
-                    0,"disabled", rut)
-                viewModel.saveLeccionData("capitulo_2","leccion_3",0,0,0,
-                    0,"disabled", rut)
-                viewModel.saveLeccionData("capitulo_2","leccion_4",0,0,0,
-                    0,"disabled", rut)
-
+                // Actualizamos estado de leccion siguiente a enabled = habilitada
+                viewModel.actualizarEstadoLeccion(rut,"capitulo_2","leccion_1","enabled")
             }
         }
 

@@ -1,5 +1,6 @@
 package com.example.apprender.view.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import android.text.Editable
@@ -30,6 +31,13 @@ class LeccionCompleteFourFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_leccion_complete_four, container, false)
+
+        val a = MediaPlayer.create(requireContext(),R.raw.a)
+        val e = MediaPlayer.create(requireContext(),R.raw.e)
+        val i = MediaPlayer.create(requireContext(),R.raw.i)
+        val o = MediaPlayer.create(requireContext(),R.raw.o)
+        val u = MediaPlayer.create(requireContext(),R.raw.u)
+
         layout = R.id.leccion_complete_four_layout
         val mLayoutInflater = layoutInflater
         btnVerificar = view.findViewById(R.id.btnVerificar)
@@ -46,7 +54,7 @@ class LeccionCompleteFourFragment : Fragment() {
             when(checkedId){
 
                 R.id.rb_1 -> {
-
+                    a.start()
                     if(inputU.isFocused) {
 
                         inputU.setText("a")
@@ -58,7 +66,7 @@ class LeccionCompleteFourFragment : Fragment() {
                 }
 
                 R.id.rb_2 -> {
-
+                    e.start()
                     if(inputU.isFocused) {
 
                         inputU.setText("e")
@@ -70,7 +78,7 @@ class LeccionCompleteFourFragment : Fragment() {
                 }
 
                 R.id.rb_3 -> {
-
+                    i.start()
                     if(inputU.isFocused) {
 
                         inputU.setText("i")
@@ -82,7 +90,7 @@ class LeccionCompleteFourFragment : Fragment() {
                 }
 
                 R.id.rb_4 -> {
-
+                    o.start()
                     if(inputU.isFocused) {
 
                         inputU.setText("o")
@@ -94,7 +102,7 @@ class LeccionCompleteFourFragment : Fragment() {
                 }
 
                 R.id.rb_5 -> {
-
+                    u.start()
                     if(inputU.isFocused) {
 
                         inputU.setText("u")

@@ -43,14 +43,14 @@ class HomeFragment : Fragment() {
         chapterList.add(
             ItemsChapterCard(
                 "Capitulo 1",
-                "Lectura dinámica",
+                "Comenzado con las vocales",
                 R.drawable.img_chapter_one
             )
         )
         chapterList.add(
             ItemsChapterCard(
                 "Capitulo 2",
-                "Asociación de imágenes",
+                "Sílabas y lectura",
                 R.drawable.img_chapter_two
             )
         )
@@ -82,7 +82,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun observeEstadoForChapter(){
-        viewModel.fetchEstadoLeccion().observe(requireActivity(), Observer {
+        viewModel.fetchEstadoLeccion().observe(this, Observer {
             val posicion = it[0]
             val estado = it[1]
 

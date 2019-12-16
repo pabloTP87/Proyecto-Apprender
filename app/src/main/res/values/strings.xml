@@ -144,7 +144,15 @@
     <string name="finalizar_encuesta">Finalizar encuesta</string>
     <string name="titulo_encuesta_confirm">Gracias por darnos tu opinión</string>
 
+    <!-- Strings para perfil de usuario-->
+    <string name="descripcion_profile">Observa tus logros y lecciones superadas</string>
+    <string name="capitulo1">Capitulo 1</string>
+    <string name="capitulo2">Capitulo 1</string>
+    <string name="superar_leccion">"aun no has superado ninguna lección!!"</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="en_construccion">En construcción</string>
+    <string name="ingresa_rut">Rut sin guión ni DV</string>
 
 </resources>

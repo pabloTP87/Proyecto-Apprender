@@ -14,8 +14,8 @@ class FirestoreViewModel : ViewModel() {
         firestoreUseCase.setUserFirestore(nombre, apellido, edad, rut, genero, fecha)
     }
 
-    fun saveLeccionData(capitulo: String, numLeccion: String, puntaje: Int, tiempo: Int, correctas: Int, incorrectas: Int, estado: String, rut: String){
-        firestoreUseCase.setLeccionFirestore(capitulo, numLeccion, puntaje, tiempo, correctas, incorrectas, estado, rut)
+    fun saveLeccionData(capitulo: String, numLeccion: String,nomLeccion: String, puntaje: Int, tiempo: Int, correctas: Int, incorrectas: Int, estado: String, rut: String){
+        firestoreUseCase.setLeccionFirestore(capitulo, numLeccion, nomLeccion, puntaje, tiempo, correctas, incorrectas, estado, rut)
     }
 
     fun saveEncuestaData(respuesta1: String, respuesta2: String, respuesta3: String, rut: String){

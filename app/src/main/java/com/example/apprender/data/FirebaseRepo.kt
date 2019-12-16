@@ -3,6 +3,8 @@ package com.example.apprender.data
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.apprender.R
+import com.example.apprender.view.supportClasses.LeccionOneProfile
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FirebaseRepo {
@@ -29,9 +31,10 @@ class FirebaseRepo {
         }
     }
 
-    fun setLeccionDataBase(capitulo: String, numLeccion: String, puntaje: Int, tiempo: Int, correctas: Int, incorrectas: Int, estado: String, rut: String){
+    fun setLeccionDataBase(capitulo: String, numLeccion: String,nomLeccion: String, puntaje: Int, tiempo: Int, correctas: Int, incorrectas: Int, estado: String, rut: String){
 
         val leccionData = hashMapOf(
+            "leccion" to nomLeccion,
             "puntaje" to puntaje,
             "tiempo" to tiempo,
             "correctas" to correctas,
@@ -132,6 +135,21 @@ class FirebaseRepo {
             }
             setEstadoLeccion(list)
         }
+    }
+
+    fun getPuntaje(rut: String): LiveData<MutableList<LeccionOneProfile>>{
+        val mutableLiveData = MutableLiveData<MutableList<LeccionOneProfile>>()
+        db.collection("usuarios").document(rut).collection("capitulo_1").whereEqualTo("estado","success").get().addOnSuccessListener { result ->
+            val listData = mutableListOf<LeccionOneProfile>()
+            for (leccion in result){
+                val titulo = leccion.getString("leccion")
+                val puntaje = leccion.getLong("puntaje").toString()
+                val leccionProfile = LeccionOneProfile(titulo!!,"Puntaje: $puntaje", R.drawable.ic_check_registry)
+                listData.add(leccionProfile)
+            }
+            mutableLiveData.value = listData
+        }
+        return mutableLiveData
     }
 
     private fun isDataPushed(value: Boolean){

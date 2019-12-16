@@ -98,7 +98,7 @@ class LecturaTwoConfirmFragment : Fragment() {
 
                     override fun onCancelButtonClick() {
                         // guardamos los datos de la leccion no superada con estado enabled = aun dispoible
-                        viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                        viewModel.saveLeccionData(capitulo,leccion,"Lee oraciones",puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
                             leccionIncorrecta.toInt(),"enabled", rut!!)
 
                         val intent = Intent(requireContext(), MainActivity::class.java)
@@ -115,7 +115,7 @@ class LecturaTwoConfirmFragment : Fragment() {
                 // Guardamos datos de la lección superada
                 leccion_save_charge.indeterminateDrawable.setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN)
                 leccion_save_charge.visibility = View.VISIBLE
-                viewModel.saveLeccionData(capitulo,leccion,puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
+                viewModel.saveLeccionData(capitulo,leccion,"Lee oraciones",puntaje.toInt(),time.toInt(),leccionCorrecta.toInt(),
                     leccionIncorrecta.toInt(),"success", rut!!)
             }
         }

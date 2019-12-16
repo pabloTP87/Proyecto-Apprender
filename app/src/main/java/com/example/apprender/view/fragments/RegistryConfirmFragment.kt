@@ -3,6 +3,7 @@ package com.example.apprender.view.fragments
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +21,7 @@ import com.example.apprender.view.MainActivity
 import com.example.apprender.viewmodel.FirestoreViewModel
 import com.google.firebase.Timestamp
 import kotlinx.android.synthetic.main.fragment_registry_confirm.*
-import kotlinx.android.synthetic.main.fragment_registry_dni.*
+import kotlinx.android.synthetic.main.fragment_registry_confirm.view.*
 
 class RegistryConfirmFragment : Fragment() {
 
@@ -31,14 +32,14 @@ class RegistryConfirmFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_registry_confirm, container, false)
 
         viewModel = ViewModelProviders.of(requireActivity()).get(FirestoreViewModel::class.java)
         session = Session(requireContext())
 
-        val view = inflater.inflate(R.layout.fragment_registry_confirm, container, false)
+        val audio = MediaPlayer.create(requireContext(),R.raw.datos_registro)
 
         val btnGuardar = view.findViewById<Button>(R.id.btnGuardar)
-
         val nameUser = view.findViewById<TextView>(R.id.txtFullName)
         val edadUser = view.findViewById<TextView>(R.id.txtAge)
         val rutUser = view.findViewById<TextView>(R.id.txtRut)
@@ -70,12 +71,18 @@ class RegistryConfirmFragment : Fragment() {
             viewModel.crearUsuario(nombre!!,apepat!!,edad,rutDB!!.toInt(),genero!!, Timestamp(java.util.Date()))
         }
 
+        view.btnAudioConfirm.setOnClickListener {
+            audio.start()
+        }
+
         saveObserve(nombre!!,rutDB!!)
         // Inflate the layout for this fragment
         return view
     }
 
     private fun saveObserve(nombre: String, rut: String){
+
+        val audioFinRegistro = MediaPlayer.create(requireContext(),R.raw.fin_registro)
 
         viewModel.fetchDataComplition().observe(this, Observer {
             if (it){
@@ -90,6 +97,7 @@ class RegistryConfirmFragment : Fragment() {
 
                 customDialog.show(fragmentManager!!,"Custom dialog")
                 customDialog.isCancelable = false
+                audioFinRegistro.start()
 
                 customDialog.setDialogButtonClickListener(object : CustomDialog.DialogButtonClickListener{
                     override fun onPositiveButtonClick() {
@@ -101,15 +109,18 @@ class RegistryConfirmFragment : Fragment() {
                     override fun onContinueButtonClick() {
                         session.createLoginSession(nombre, rut)
                         // Inicializamos las lecciones gurdandolas con puntaje 0
-                        viewModel.saveLeccionData("capitulo_1","leccion_1",0,0,0,0,"enabled",rut)
-                        viewModel.saveLeccionData("capitulo_1","leccion_2",0,0,0,0,"disabled",rut)
-                        viewModel.saveLeccionData("capitulo_1","leccion_3",0,0,0,0,"disabled",rut)
-                        viewModel.saveLeccionData("capitulo_2","leccion_1",0,0,0,0,"disabled",rut)
-                        viewModel.saveLeccionData("capitulo_2","leccion_2",0,0,0,0,"disabled",rut)
-                        viewModel.saveLeccionData("capitulo_2","leccion_3",0,0,0,0,"disabled",rut)
-                        viewModel.saveLeccionData("capitulo_2","leccion_4",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_1","leccion_1","Reconociendo las vocales",0,0,0,0,"enabled",rut)
+                        viewModel.saveLeccionData("capitulo_1","leccion_2","Asociando imágenes",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_1","leccion_3","Completa las vocales",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_1","Separando las sílabas",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_2","Marcando las sílabas",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_3","Lee palabras",0,0,0,0,"disabled",rut)
+                        viewModel.saveLeccionData("capitulo_2","leccion_4","Lee oraciones",0,0,0,0,"disabled",rut)
                         // Inicializamos la encuesta de satisfacción con datos vacios
                         viewModel.saveEncuestaData("","","",rut)
+
+                        audioFinRegistro.stop()
+
                         val intent = Intent(requireContext(),MainActivity::class.java)
                         startActivity(intent)
                         Toast.makeText(requireContext(),"Bienvenido $nombre", Toast.LENGTH_SHORT).show()

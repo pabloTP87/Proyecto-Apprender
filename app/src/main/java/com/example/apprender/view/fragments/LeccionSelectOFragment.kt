@@ -1,5 +1,6 @@
 package com.example.apprender.view.fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.core.content.ContextCompat
 import android.view.LayoutInflater
@@ -27,6 +28,11 @@ class LeccionSelectOFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_leccion_select_o, container, false)
+
+        val audio1 = MediaPlayer.create(requireContext(),R.raw.avion)
+        val audio2 = MediaPlayer.create(requireContext(),R.raw.estrella)
+        val audio3 = MediaPlayer.create(requireContext(),R.raw.olla)
+
         layout = R.id.leccion_o_layout
         val mLayoutInflater = layoutInflater
         btnVerificar = view.findViewById(R.id.btnVerificar)
@@ -35,14 +41,17 @@ class LeccionSelectOFragment : Fragment() {
         rgOptions.setOnCheckedChangeListener { group, checkedId ->
             when (checkedId) {
                 R.id.avion -> {
+                    audio1.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionSelectOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
                 R.id.estrella -> {
+                    audio2.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionSelectOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
                 R.id.olla -> {
+                    audio3.start()
                     btnVerificar.isEnabled = true
                     btnVerificar.backgroundTintList = ContextCompat.getColorStateList(this@LeccionSelectOFragment.context!!,R.color.btn_green_selector_unpressed)
                 }
