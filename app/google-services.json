@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:297949786240:android:185a423f97767a16b03665",
+        "mobilesdk_app_id": "1:297949786240:android:a0fa74b174a0ffd3b03665",
         "android_client_info": {
-          "package_name": "com.example.apprender"
+          "package_name": "com.apprenderchile.apprender"
         }
       },
       "oauth_client": [
         {
-          "client_id": "297949786240-k8r8q53iosqfj18teesp7aqrea8kgudc.apps.googleusercontent.com",
+          "client_id": "297949786240-i1snagr5ui275hfvm98g1qe5on3iedkb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.apprender",
+            "package_name": "com.apprenderchile.apprender",
             "certificate_hash": "7d3085b02eb8454907a32ab68610560fd149ec17"
           }
         },

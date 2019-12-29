@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.example.apprender">
+        package="com.apprenderchile.apprender">
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -13,67 +13,67 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name=".view.EncuestaActivity"
+                android:name="com.apprenderchile.apprender.view.EncuestaActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.IntroEncuestaActivity"
+                android:name="com.apprenderchile.apprender.view.IntroEncuestaActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LeccionLecturaTwoActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionLecturaTwoActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LeccionLecturaOneActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionLecturaOneActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LeccionSilabasTwoActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionSilabasTwoActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LeccionSilabasOneActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionSilabasOneActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.ChapterThreeActivity"
+                android:name="com.apprenderchile.apprender.view.ChapterThreeActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.ChapterTwoActivity"
+                android:name="com.apprenderchile.apprender.view.ChapterTwoActivity"
                 android:label="@string/capitulo_2"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LeccionVocalesThreeActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionVocalesThreeActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait" />
         <activity
-                android:name=".view.LeccionVocalesTwoActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionVocalesTwoActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LeccionVocalesOneActivity"
+                android:name="com.apprenderchile.apprender.view.LeccionVocalesOneActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.ChapterOneActivity"
+                android:name="com.apprenderchile.apprender.view.ChapterOneActivity"
                 android:label="@string/capitulo_1"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.RegistryActivity"
+                android:name="com.apprenderchile.apprender.view.RegistryActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.StartActivity"
+                android:name="com.apprenderchile.apprender.view.StartActivity"
                 android:theme="@style/LessonTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.LoginActivity"
+                android:name="com.apprenderchile.apprender.view.LoginActivity"
                 android:theme="@style/SplashTheme"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.SplashActivity"
+                android:name="com.apprenderchile.apprender.view.SplashActivity"
                 android:theme="@style/SplashTheme"
                 android:screenOrientation="portrait">
             <intent-filter>
@@ -83,10 +83,10 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".view.MainActivity"
+                android:name="com.apprenderchile.apprender.view.MainActivity"
                 android:screenOrientation="portrait"/>
         <activity
-                android:name=".view.WalkthroughActivity"
+                android:name="com.apprenderchile.apprender.view.WalkthroughActivity"
                 android:theme="@style/WalkthroughTheme"
                 android:screenOrientation="portrait"/>
     </application>
